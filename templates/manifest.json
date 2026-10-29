@@ -1,0 +1,89 @@
+{
+  "title": "丽兹行·感恩连接行动包｜可定制贺卡样张",
+  "version": "2026-11-v1",
+  "updatedAt": "2026-10-29",
+  "logoSource": "用户提供的原始logo.png，原样缩放呈现，未重画或抠图。",
+  "notes": [
+    "以下为可定制样张，不包含真实顾客姓名或真实服务案例。",
+    "请在贺卡工具中修改称呼、正文和署名；方括号及书名式括号中的内容需替换为真实信息。",
+    "线上PNG适合微信发送；线下PNG与PDF为A6横版148×105mm，打印时选择实际大小100%。",
+    "批量印刷前先打印一张确认字体、纸张和效果。"
+  ],
+  "items": [
+    {
+      "id": "online_trust",
+      "title": "感谢信任",
+      "heading": "感谢每一次，愿意相信。",
+      "channel": "online",
+      "dimensions": "1080×1440px",
+      "files": {
+        "png": "templates/online_trust.png"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 36
+    },
+    {
+      "id": "online_autumn",
+      "title": "秋日问候",
+      "heading": "秋意渐浓，问候如约。",
+      "channel": "online",
+      "dimensions": "1080×1440px",
+      "files": {
+        "png": "templates/online_autumn.png"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 36
+    },
+    {
+      "id": "online_after_meeting",
+      "title": "把约定记在心里",
+      "heading": "谢谢您的时间，也谢谢您的坦诚。",
+      "channel": "online",
+      "dimensions": "1080×1440px",
+      "files": {
+        "png": "templates/online_after_meeting.png"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 36
+    },
+    {
+      "id": "offline_thanks",
+      "title": "感谢托付",
+      "heading": "一份心意，一声谢谢。",
+      "channel": "offline",
+      "dimensions": "1748×1240px；148×105mm（A6横版）",
+      "files": {
+        "png": "templates/offline_thanks.png",
+        "pdf": "templates/offline_thanks.pdf"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 40
+    },
+    {
+      "id": "offline_autumn",
+      "title": "秋日心意",
+      "heading": "把秋日的美好，送到您身边。",
+      "channel": "offline",
+      "dimensions": "1748×1240px；148×105mm（A6横版）",
+      "files": {
+        "png": "templates/offline_autumn.png",
+        "pdf": "templates/offline_autumn.pdf"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 40
+    },
+    {
+      "id": "offline_after_meeting",
+      "title": "认真回应",
+      "heading": "把您的期待，记在心里。",
+      "channel": "offline",
+      "dimensions": "1748×1240px；148×105mm（A6横版）",
+      "files": {
+        "png": "templates/offline_after_meeting.png",
+        "pdf": "templates/offline_after_meeting.pdf"
+      },
+      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
+      "bodyFontSize": 40
+    }
+  ]
+}
