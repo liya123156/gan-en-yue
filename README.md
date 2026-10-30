@@ -13,13 +13,13 @@
 
 ## 发布状态与地址
 
-本仓库初建时未启用GitHub Pages。启用main分支根目录的Pages发布后，固定访问入口为 https://liya123156.github.io/gan-en-yue/ 。启用并实际验证前，不视为已上线。后续更新同一仓库和入口，二维码保持不变。
+GitHub Pages已启用main分支根目录，固定访问入口为 https://liya123156.github.io/gan-en-yue/ 。2026年10月30日已确认部署成功，并完成真实浏览器首页、项目组视图、电子贺卡PNG及A6打印PDF下载检查。后续更新同一仓库和入口，二维码保持不变。
 
 ## 共用资料上传
 
 保留Supabase固定项目 https://axnadxkfuemmktffcehb.supabase.co 。它是后端API地址。schema与安全策略位于supabase/schema.sql，前端适配器已准备。仅Liya被明确登记为管理员后有写入权限，访客仅取用公开资料。
 
-Supabase原项目已连接，资料表、RLS与仅管理员可调用的文件区初始化函数已部署；公开Publishable Key已接入。Liya管理员账号已预建并绑定，共享文件区已通过Storage API创建。首次设置/恢复密码页面已准备；仍需正式网页发布、Auth回跳地址配置、管理员邮箱激活，以及真实文件上传下载验收。不能在前端或仓库填写service_role、secret key、数据库密码。backend-config.js只允许公开Publishable Key。
+Supabase原项目已连接，资料表、RLS与仅管理员可调用的文件区初始化函数已部署；公开Publishable Key已接入。Liya管理员账号已预建并绑定，共享文件区已通过Storage API创建。首次设置/恢复密码页面已准备；正式网页已上线；仍需Auth回跳地址配置、管理员邮箱激活，以及真实文件上传下载验收。不能在前端或仓库填写service_role、secret key、数据库密码。backend-config.js只允许公开Publishable Key。
 
 贺卡称呼、正文、署名只保留在各自页面草稿，不上传数据库，多人同时使用互不影响。
 
