@@ -1,89 +1,149 @@
 {
-  "title": "丽兹行·感恩连接行动包｜可定制贺卡样张",
-  "version": "2026-11-v1",
-  "updatedAt": "2026-10-29",
-  "logoSource": "用户提供的原始logo.png，原样缩放呈现，未重画或抠图。",
+  "title": "丽兹行感恩连接行动包｜五款商务贺卡",
+  "version": "2026-11-v2",
+  "updatedAt": "2026-10-30",
+  "logoSource": "用户提供的原始LANDZ标识，保持原样缩放呈现。",
   "notes": [
-    "以下为可定制样张，不包含真实顾客姓名或真实服务案例。",
-    "请在贺卡工具中修改称呼、正文和署名；方括号及书名式括号中的内容需替换为真实信息。",
-    "线上PNG适合微信发送；线下PNG与PDF为A6横版148×105mm，打印时选择实际大小100%。",
-    "批量印刷前先打印一张确认字体、纸张和效果。"
+    "五款设计均提供线上电子版与A6横版，称呼、正文和署名可自行定制。",
+    "以下为排版样张；下载使用前请在贺卡工具中填写真实内容。",
+    "线上PNG适合线上渠道发送；线下PNG及PDF为148×105mm（A6横版），打印选择实际大小100%。",
+    "批量印刷前请先打样确认纸张与效果。"
   ],
   "items": [
     {
       "id": "online_trust",
-      "title": "感谢信任",
-      "heading": "感谢每一次，愿意相信。",
+      "title": "都会鎏金",
+      "heading": "承蒙信任，始终用心",
+      "theme": "champagne",
       "channel": "online",
       "dimensions": "1080×1440px",
       "files": {
         "png": "templates/online_trust.png"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 36
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 34
     },
     {
       "id": "online_autumn",
-      "title": "秋日问候",
-      "heading": "秋意渐浓，问候如约。",
+      "title": "海派雅紫",
+      "heading": "申城深秋，诚意常在",
+      "theme": "haipai",
       "channel": "online",
       "dimensions": "1080×1440px",
       "files": {
         "png": "templates/online_autumn.png"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 36
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 34
     },
     {
       "id": "online_after_meeting",
-      "title": "把约定记在心里",
-      "heading": "谢谢您的时间，也谢谢您的坦诚。",
+      "title": "梧桐暖杏",
+      "heading": "所托之事，持续用心",
+      "theme": "amber",
       "channel": "online",
       "dimensions": "1080×1440px",
       "files": {
         "png": "templates/online_after_meeting.png"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 36
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 34
+    },
+    {
+      "id": "online_asset",
+      "title": "玉兰青绿",
+      "heading": "珍视托付，专业以待",
+      "theme": "jade",
+      "channel": "online",
+      "dimensions": "1080×1440px",
+      "files": {
+        "png": "templates/online_asset.png"
+      },
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 33
+    },
+    {
+      "id": "online_home",
+      "title": "申城蓝金",
+      "heading": "为家的选择，认真每一步",
+      "theme": "bluegold",
+      "channel": "online",
+      "dimensions": "1080×1440px",
+      "files": {
+        "png": "templates/online_home.png"
+      },
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 32
     },
     {
       "id": "offline_thanks",
-      "title": "感谢托付",
-      "heading": "一份心意，一声谢谢。",
+      "title": "都会鎏金",
+      "heading": "承蒙信任，始终用心",
+      "theme": "champagne",
       "channel": "offline",
       "dimensions": "1748×1240px；148×105mm（A6横版）",
       "files": {
         "png": "templates/offline_thanks.png",
         "pdf": "templates/offline_thanks.pdf"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 40
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 38
     },
     {
       "id": "offline_autumn",
-      "title": "秋日心意",
-      "heading": "把秋日的美好，送到您身边。",
+      "title": "海派雅紫",
+      "heading": "申城深秋，诚意常在",
+      "theme": "haipai",
       "channel": "offline",
       "dimensions": "1748×1240px；148×105mm（A6横版）",
       "files": {
         "png": "templates/offline_autumn.png",
         "pdf": "templates/offline_autumn.pdf"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 40
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 38
     },
     {
       "id": "offline_after_meeting",
-      "title": "认真回应",
-      "heading": "把您的期待，记在心里。",
+      "title": "梧桐暖杏",
+      "heading": "所托之事，持续用心",
+      "theme": "amber",
       "channel": "offline",
       "dimensions": "1748×1240px；148×105mm（A6横版）",
       "files": {
         "png": "templates/offline_after_meeting.png",
         "pdf": "templates/offline_after_meeting.pdf"
       },
-      "previewNote": "称呼、正文、署名均为占位模板。请定制后使用；样张中的服务事项不代表真实发生。",
-      "bodyFontSize": 40
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 38
+    },
+    {
+      "id": "offline_asset",
+      "title": "玉兰青绿",
+      "heading": "珍视托付，专业以待",
+      "theme": "jade",
+      "channel": "offline",
+      "dimensions": "1748×1240px；148×105mm（A6横版）",
+      "files": {
+        "png": "templates/offline_asset.png",
+        "pdf": "templates/offline_asset.pdf"
+      },
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 38
+    },
+    {
+      "id": "offline_home",
+      "title": "申城蓝金",
+      "heading": "为家的选择，认真每一步",
+      "theme": "bluegold",
+      "channel": "offline",
+      "dimensions": "1748×1240px；148×105mm（A6横版）",
+      "files": {
+        "png": "templates/offline_home.png",
+        "pdf": "templates/offline_home.pdf"
+      },
+      "previewNote": "样张展示通用称呼与参考内容；请在定制工具中修改后使用。",
+      "bodyFontSize": 38
     }
   ]
 }
