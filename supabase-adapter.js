@@ -4,14 +4,17 @@
  if(!cfg||cfg.provider!=='supabase'||!cfg.publishableKey)return;
  const origin=String(cfg.url).replace(/\/$/,''), bucket=cfg.bucket||'gratitude-materials',nativeFetch=window.fetch.bind(window);
  const SESSION_KEY='landz-gratitude-admin-session';
+ const FILE_MIMES={'.pdf':'application/pdf','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.xlsx':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','.pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation'};
+ let bucketReady=false;
  let session;try{session=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');}catch{session=null;}
  const result=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
  const authHeaders=()=>({'apikey':cfg.publishableKey,...(session?.access_token?{Authorization:'Bearer '+session.access_token}:{})});
- const saveSession=value=>{session=value;try{value?sessionStorage.setItem(SESSION_KEY,JSON.stringify(value)):sessionStorage.removeItem(SESSION_KEY);}catch{}};
+ const saveSession=value=>{if(!value||value.user?.id!==session?.user?.id)bucketReady=false;session=value;try{value?sessionStorage.setItem(SESSION_KEY,JSON.stringify(value)):sessionStorage.removeItem(SESSION_KEY);}catch{}};
  async function supa(route,options={}){const response=await nativeFetch(origin+route,{...options,headers:{...authHeaders(),...(options.headers||{})}});const raw=await response.text();let value;try{value=raw?JSON.parse(raw):null;}catch{value={message:raw};}if(!response.ok)throw Object.assign(Error(value?.msg||value?.message||value?.error_description||value?.error||'操作未完成'),{status:response.status});return value;}
  async function refresh(){if(!session?.refresh_token)return;if((session.expires_at||0)*1000>Date.now()+60000)return;try{const next=await supa('/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});saveSession(next);}catch{saveSession(null);}}
  async function admin(){if(!session)return false;await refresh();if(!session)return false;const rows=await supa('/rest/v1/gratitude_admins?select=user_id&limit=1');return Array.isArray(rows)&&rows.length===1;}
- const material=row=>({id:row.id,title:row.title,category:row.category,fileName:row.file_name,size:row.size,mime:row.mime,source:row.source,date:row.document_date,updatedAt:row.updated_at,active:row.active,url:origin+'/storage/v1/object/public/'+encodeURIComponent(bucket)+'/'+row.storage_path.split('/').map(encodeURIComponent).join('/')});
+ async function ensureBucket(){if(bucketReady)return;await supa('/functions/v1/gratitude-storage-setup',{method:'POST',headers:{'content-type':'application/json'},body:'{}'});bucketReady=true;}
+ const material=row=>({id:row.id,title:row.title,category:row.category,fileName:row.file_name,size:row.size,mime:row.mime,source:row.source,date:row.document_date,updatedAt:row.updated_at,active:row.active,url:origin+'/storage/v1/object/public/'+encodeURIComponent(bucket)+'/'+row.storage_path.split('/').map(encodeURIComponent).join('/')+'?download='+encodeURIComponent(row.file_name)});
  window.fetch=async(input,options={})=>{
   const raw=typeof input==='string'?input:input.url, u=new URL(raw,location.href);
   if(u.origin!==location.origin||!u.pathname.startsWith('/api/'))return nativeFetch(input,options);
@@ -29,11 +32,13 @@
    if(p==='/api/admin/materials'&&method==='GET')return result({materials:(await supa('/rest/v1/gratitude_materials?select=*&order=updated_at.desc')).map(material)});
    if(p==='/api/admin/materials'&&method==='POST'){
     const form=options.body,file=form.get('file'), category=String(form.get('category')||'other'),title=String(form.get('title')||'').trim();
-    const ext=(file?.name||'').match(/\.[^.]+$/)?.[0].toLowerCase();if(!file||!['.png','.jpg','.jpeg','.webp','.pdf','.xlsx','.docx','.pptx'].includes(ext)||file.size>20*1024*1024)return result({error:'请选择20MB以内的图片、PDF或办公文件。'},400);
+    const ext=(file?.name||'').match(/\.[^.]+$/)?.[0].toLowerCase();if(!file||!Object.hasOwn(FILE_MIMES,ext)||file.size<=0||file.size>20*1024*1024)return result({error:'请选择20MB以内的非空图片、PDF或办公文件。'},400);
     if(!title||title.length>80||!['hmall','market','other'].includes(category))return result({error:'请完善标题与分类'},400);
+    const reportedMime=String(file.type||'').toLowerCase(),mime=!reportedMime||['application/octet-stream','binary/octet-stream'].includes(reportedMime)?FILE_MIMES[ext]:reportedMime;
     const id=crypto.randomUUID(),storagePath=id+ext;
-    await supa('/storage/v1/object/'+encodeURIComponent(bucket)+'/'+storagePath,{method:'POST',headers:{'content-type':file.type||'application/octet-stream','x-upsert':'false'},body:file});
-    const row={id,title,category,file_name:file.name,size:file.size,mime:file.type||'application/octet-stream',storage_path:storagePath,source:String(form.get('source')||'').slice(0,120),document_date:String(form.get('date')||new Date().toISOString().slice(0,10)),active:true};
+    await ensureBucket();
+    await supa('/storage/v1/object/'+encodeURIComponent(bucket)+'/'+storagePath,{method:'POST',headers:{'content-type':mime,'x-upsert':'false'},body:file});
+    const row={id,title,category,file_name:file.name,size:file.size,mime,storage_path:storagePath,source:String(form.get('source')||'').slice(0,120),document_date:String(form.get('date')||new Date().toISOString().slice(0,10)),active:true};
     try{await supa('/rest/v1/gratitude_materials',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(row)});}catch(e){await supa('/storage/v1/object/'+encodeURIComponent(bucket),{method:'DELETE',headers:{'content-type':'application/json'},body:JSON.stringify({prefixes:[storagePath]})}).catch(()=>{});throw e;}
     return result({ok:true,material:material(row)},201);
    }

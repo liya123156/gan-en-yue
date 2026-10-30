@@ -19,7 +19,7 @@
 
 保留Supabase固定项目 https://axnadxkfuemmktffcehb.supabase.co 。它是后端API地址。schema与安全策略位于supabase/schema.sql，前端适配器已准备。仅Liya被明确登记为管理员后有写入权限，访客仅取用公开资料。
 
-实际接入还需要该项目的授权连接、Publishable Key及真实管理员Auth UUID；当前未提供，故共享上传标记为待接入。不能在前端或仓库填写service_role、secret key、数据库密码。backend-config.js只允许公开Publishable Key。
+Supabase原项目已连接，资料表、RLS与仅管理员可调用的文件区初始化函数已部署；公开Publishable Key已接入。还需绑定Liya真实管理员Auth账号，并完成实际文件上传下载验收。首次管理员上传时，受保护的初始化函数通过Storage API创建共享文件区。不能在前端或仓库填写service_role、secret key、数据库密码。backend-config.js只允许公开Publishable Key。
 
 贺卡称呼、正文、署名只保留在各自页面草稿，不上传数据库，多人同时使用互不影响。
 

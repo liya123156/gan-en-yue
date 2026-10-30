@@ -2,6 +2,6 @@
 window.GRATITUDE_BACKEND = {
   provider: 'supabase',
   url: 'https://axnadxkfuemmktffcehb.supabase.co',
-  publishableKey: '',
+  publishableKey: 'sb_publishable_-uMAKPMYQ9vGKAHcuLQrYA_6Xzguny5',
   bucket: 'gratitude-materials'
 };
