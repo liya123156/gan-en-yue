@@ -226,3 +226,9 @@ body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.s
 @media(max-height:700px){.letter-entry{padding-top:18px;padding-bottom:14px}.entry-brand{margin-bottom:9px}.entry-kicker{margin-bottom:7px}.entry-intro{margin-bottom:14px}.envelope-open{max-width:310px}.entry-open-label{margin-top:13px}.entry-footnote{margin-top:10px}}
 @media(prefers-reduced-motion:reduce){.letter-entry,.envelope-art,.envelope-flap,.envelope-note,.envelope-seal{transition:none!important}.letter-entry.is-opening{transform:none}.letter-entry.is-opening .envelope-note{transform:none}.envelope-open:hover .envelope-art{transform:none}}
 @media print{.letter-entry{display:none!important}body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.site-footer,body.letter-arrival>#mobile-nav{visibility:visible}}
+
+/* Upcoming institute content stays within the market-report description. */
+.professional-card .market-release-note{margin-top:16px;padding-top:14px;border-top:1px solid #eadbc7}
+.professional-card .market-release-note p{margin:0;font-size:12px;line-height:1.9;color:#927b70;overflow-wrap:anywhere}
+.professional-card .market-release-note strong{font-weight:650;color:#805b6f}
+@media(max-width:760px){.professional-card .market-release-note p{font-size:13px}}
