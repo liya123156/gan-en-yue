@@ -91,14 +91,14 @@
     const directoryLinks=sections.map(([id,no,title])=>`<a href="#${id}" data-section-link><span>${no}</span><b>${title}</b></a>`).join('')+`<a href="#support" data-section-link class="directory-extra"><span>＋</span><b>${esc(supportLabel)}</b></a>`;
     const directory=`<aside class="sales-directory" aria-label="行动包目录"><div class="directory-title"><span>LANDZ SERVICE TOOLKIT</span><h2>感恩连接<br>行动物料包</h2><p>面向销售中心的顾客服务工具<br>选择内容，编辑后即可取用。</p></div><nav class="directory-links" aria-label="功能目录">${directoryLinks}</nav><a class="directory-qr" href="qr.html">分享行动包二维码 <span aria-hidden="true">↗</span></a></aside>`;
     const phoneDirectory=`<details class="phone-directory"><summary><span>更多内容</span><b>行动说明 · 反馈 · 支持</b></summary><nav class="directory-links" aria-label="手机补充内容目录"><a href="#consensus" data-section-link><span>01</span><b>行动说明与目标</b></a><a href="#feedback" data-section-link><span>06</span><b>反馈与建议</b></a><a href="#support" data-section-link><span>＋</span><b>${esc(supportLabel)}</b></a></nav></details>`;
-    const hero=`<section class="hero letter-hero" id="start"><div class="hero-layout"><div class="hero-content"><p class="eyebrow">NOVEMBER 2026 · 感恩相连，服务有光</p><p class="hero-tool-name">丽兹行 · 感恩连接行动包</p><h1>致销售中心<br><em>全体伙伴的一封信</em></h1><p class="letter-salutation">亲爱的伙伴：</p><div class="letter-intro"><p>🍂 十一月，是丽兹行一年一度的感恩月。</p><p>从国王与天使的彼此关怀，到爱心义卖的共同参与，我们把“感恩利他”放进具体的行动里，也珍惜每一位顾客的选择与托付。</p><p>💜 也想借这个月，先对用心服务的你，说一声谢谢。</p></div><details class="welcome-letter-more" ${window.matchMedia('(min-width: 761px)').matches?'open':''}><summary>读完这封信</summary><div class="letter-rest"><p>每一次耐心倾听、每一份仔细准备、每一项持续跟进，都有你的用心。你为顾客多想的一步，值得被看见，也值得被珍惜。</p><p>顾客给予我们的选择与托付，同样值得认真回应。让我们主动听听每一位业主和客户最近的打算，关心需求有哪些变化，再把真诚的感谢和合适的服务送到他身边。</p><p>我们也为你准备了这份感恩连接行动包。贺卡、表达文案、伴手礼参考和专业资料入口，希望能让你的下一次联系、一次面见，多一份从容与心意。</p><p>愿这份支持陪着你，把感谢说具体，把顾客在意的事做好，让温暖在每一天的服务里延续。</p><p class="letter-signature">感恩月项目组</p><p class="letter-date">2026年11月</p><div class="letter-tools-next"><a class="btn primary" href="#tools">收好这封信，打开行动包</a></div><div class="letter-share"><button class="btn" type="button" data-copy-invitation>复制微信转发文案</button><a href="qr.html" class="btn">行动包二维码</a><button type="button" class="btn" data-reopen-letter>再开启这封信</button></div></div></details></div><aside class="hero-guide" aria-label="兰斯博士的使用提示"><div class="ip-portrait"><img src="media/dr-lans.webp" alt="兰斯博士：丽兹行AI服务伙伴" width="1254" height="1254" fetchpriority="high"></div><div class="ip-speech"><span>兰斯博士 · 陪你一起行动</span><p>先听懂顾客的需要，<br>再准备合适的感谢与服务。</p><small>这一次，也把心里的感谢说出来。</small></div></aside></div></section>`;
-    const aim=`<details class="sales-aim usage-guide" id="how-to"><summary><span>怎样开始下一次行动？</span><small>三步使用说明</small></summary><div class="sales-aim-grid"><article><b>01</b><h3>先了解，现在需要什么</h3><p>回顾服务经历，主动听听顾客最近的打算和变化，确认当下关心的问题。</p></article><article><b>02</b><h3>选内容，写下真实感谢</h3><p>按顾客关系与服务阶段，选择贺卡和文案，补充你们之间真实的经历与细节。</p></article><article><b>03</b><h3>配服务，把约定做到</h3><p>准备有用的专业资料或适宜的心意，主动联系、面见，并把后续服务逐项跟进。</p></article></div></details>`;
+    const hero=`<section class="hero letter-hero" id="start"><div class="hero-layout"><div class="hero-content"><p class="eyebrow">NOVEMBER 2026 · 感恩相连，服务有光</p><p class="hero-tool-name">丽兹行 · 感恩连接行动包</p><h1>致销售中心<br><em>全体伙伴的一封信</em></h1><p class="letter-salutation">亲爱的伙伴：</p><div class="letter-intro"><p>🍂 十一月，是丽兹行一年一度的感恩月。</p><p>从国王与天使的彼此关怀，到爱心义卖的共同参与，我们把“感恩利他”放进具体的行动里，也珍惜每一位顾客的选择与托付。</p><p>💜 也想借这个月，先对用心服务的你，说一声谢谢。</p></div><details class="welcome-letter-more" ${window.matchMedia('(min-width: 761px)').matches?'open':''}><summary>读完这封信</summary><div class="letter-rest"><p>每一次耐心倾听、每一份仔细准备、每一项持续跟进，都有你的用心。你为顾客多想的一步，值得被看见，也值得被珍惜。</p><p>顾客给予我们的选择与托付，同样值得认真回应。让我们主动听听每一位业主和客户最近的打算，关心需求有哪些变化，再把真诚的感谢和合适的服务送到他身边。</p><p>我们也为你准备了这份感恩连接行动包。贺卡、表达文案、伴手礼参考和专业资料入口，希望能让你的下一次联系、一次面见，多一份从容与心意。</p><p>愿这份支持陪着你，把感谢说具体，把顾客在意的事做好，让温暖在每一天的服务里延续。</p><p class="letter-signature">感恩月项目组</p><p class="letter-date">2026年11月</p></div></details><div class="letter-tools-next"><a class="btn primary" href="#tools" id="letter-tool-link">收好这封信，打开行动包</a></div><div class="letter-share"><button class="btn" type="button" data-copy-invitation>复制微信转发文案</button><a href="qr.html" class="btn">行动包二维码</a><button type="button" class="btn" data-reopen-letter>再开启这封信</button></div></div><aside class="hero-guide" aria-label="兰斯博士"><div class="ip-portrait"><img src="media/dr-lans.webp" alt="兰斯博士：丽兹行AI服务伙伴" width="1254" height="1254" fetchpriority="high"></div><p class="companion-caption">兰斯博士 · 陪你一起行动</p></aside></div></section>`;
+    const aim=`<details class="sales-aim usage-guide" id="how-to"><summary><span>行动包怎么用？</span><small>查看三步使用说明</small></summary><div class="sales-aim-grid"><article><b>01</b><h3>先了解，现在需要什么</h3><p>回顾服务经历，主动听听顾客最近的打算和变化，确认当下关心的问题。</p></article><article><b>02</b><h3>选内容，写下真实感谢</h3><p>按顾客关系与服务阶段，选择贺卡和文案，补充你们之间真实的经历与细节。</p></article><article><b>03</b><h3>配服务，把约定做到</h3><p>准备有用的专业资料或适宜的心意，主动联系、面见，并把后续服务逐项跟进。</p></article></div></details>`;
     const shortcuts=[{id:'cards',title:'贺卡定制',description:'5种风格，定制后保存'},{id:'messages',title:'感谢文案',description:'18个场景，按需选用'},{id:'gifts',title:'伴手礼参考',description:'按预算挑选得体心意'},{id:'professional',title:'专业资料',description:'准备顾客所需的内容'}];
-    const quick=`<section class="tool-launcher" id="tools" aria-labelledby="tool-launcher-title"><div class="tool-launcher-heading"><h2 id="tool-launcher-title">为你的下一次服务，多准备一步。</h2><p>选择需要的内容，加入你的心意，准备下一次联系。</p></div><div class="quick-grid">${shortcuts.map((q,i)=>`<a class="quick-card" href="#${esc(q.id)}"><div class="quick-top"><span class="quick-icon">${icons[q.id]||'✧'}</span><span class="quick-number">0${i+2}</span></div><h3>${esc(q.title)}</h3><p>${esc(q.description)}</p><span class="arrow" aria-hidden="true">↗</span></a>`).join('')}</div></section><aside class="mobile-companion" aria-label="兰斯博士的小提示"><img src="media/dr-lans.webp" alt="" width="56" height="56" loading="lazy"><div><strong>兰斯博士 · 陪你一起行动</strong><p>先听听顾客最近的打算，再准备感谢与服务。</p></div></aside>`;
+    const quick=`<section class="tool-launcher" id="tools" aria-labelledby="tool-launcher-title"><div class="tool-launcher-heading"><h2 id="tool-launcher-title">常用工具</h2></div><div class="quick-grid">${shortcuts.map((q,i)=>`<a class="quick-card" href="#${esc(q.id)}"><div class="quick-top"><span class="quick-icon">${icons[q.id]||'✧'}</span><span class="quick-number">0${i+2}</span></div><h3>${esc(q.title)}</h3><p>${esc(q.description)}</p><span class="arrow" aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
     const consensus=heading('consensus','01 · ACTION GUIDE','感恩月目标与行动说明','11月1日—30日，把心里的感谢主动表达出来，也把顾客当下需要的服务准备好。','01')+`<div class="action-guide-body"><h3 class="guide-title">目标、服务对象与行动重点</h3><div class="consensus-grid"><article class="surface consensus-main"><p class="quote-line">珍惜顾客的信任，从主动理解他的需要开始。</p><div class="reading"><p>顾客愿意分享家庭的需要、房产的安排与重要的选择，让我们的专业有了创造价值的机会。感恩利他，体现在记得对方关心的事，也愿意主动了解新的想法，并随需求变化调整服务。</p><p>这个月，我们面向全量业主与客户主动表达感谢；在售业主重点推进线下面见。一次真诚的问候、一份有用的信息、一张定制贺卡、一项认真完成的服务，都可以让感谢被感受到。</p></div><div class="callout"><p><strong>先倾听 → 再准备 → 主动表达 → 持续跟进</strong><br>让顾客更了解你的专业与用心，也更了解丽兹行能够为他做什么。</p></div></article><article class="surface"><h3>为什么在11月，一起行动？</h3><div class="reading"><p>11月有集中表达感谢的文化契机。丽兹行每年的感恩月，通过国王与天使传递伙伴间的感谢，通过爱心义卖参与社会回馈，也把这份感谢带进与顾客的日常服务。</p><p>感恩在每一天，11月更主动地表达。这里统一准备了感性表达与专业服务工具，方便你根据顾客的关系、当前需求和服务阶段，快速选择、个性定制并直接使用。</p></div><ul class="guide-facts"><li><strong>服务对象</strong><span>全量业主与客户；保安、物业、管家另作感谢与记录。</span></li><li><strong>行动重点</strong><span>全量线上表达，在售业主重点面见，服务随需求变化调整。</span></li><li><strong>物料用途</strong><span>顾客表达、主动联系、面见准备与后续专业服务。</span></li></ul></article></div><div class="guide-audiences"><h3 class="guide-title">对象分类与建议服务深度</h3><div class="reading audience-grid">${arr(a.audiences).sort((x,y)=>(x.order||0)-(y.order||0)).map(x=>`<article class="audience-card"><span class="tag ${x.priority?.includes('S')?'gold':''}">${esc(x.priority||x.category||'服务对象')}</span><h3>${esc(x.label||x.type||x.category||'顾客服务')}</h3><p>${esc(x.online||x.action||'主动表达感谢，提供具体服务。')}</p><p>${esc(x.depth||'')}</p></article>`).join('')}</div></div></div></section>`;
     const cards=heading('cards','02 · PERSONALIZED CARDS','贺卡定制与下载','5种商务风格，配有线上发送版和A6线下面见版；选择设计后，编辑内容即可预览与下载。','02')+`<div class="tool-guide"><img src="media/dr-lans.webp" alt="" width="56" height="56" loading="lazy"><p><strong>兰斯博士的小提示</strong>先选择适合顾客的风格，再写入真实的感谢与下一步服务；五种设计可随时切换。</p></div><div id="card-maker-root"></div><details class="more-content template-downloads"><summary>查看并下载10款贺卡样张</summary><p class="template-intro">线上5款、线下5款。可先查看设计，正式发送前请在上方编辑称呼、正文和署名；线下PDF按A6横版实际大小打印。</p><div id="template-gallery" class="template-gallery"><p class="template-intro">正在打开贺卡样张…</p></div></details></section>`;
     const messages=heading('messages','03 · CLIENT COMMUNICATION','分场景感谢文案','按照服务对象与沟通阶段选用；先听听顾客当前的需要，再把感谢与适合他的服务说清楚。','03')+`<div class="message-guide"><strong>推荐表达顺序</strong><span>感谢一段真实经历</span><i>→</i><span>了解当下的需要</span><i>→</i><span>提出具体的服务</span></div><div class="filters" id="message-filters"></div><div class="message-grid" id="message-grid"></div><div class="callout"><p>方括号内容是需要替换的真实信息，请核对后再发送。建议按顾客关系调整称呼与语气，内容简洁、事实准确，给对方留出合适的回复空间。</p></div></section>`;
-    const gifts=heading('gifts','04 · THOUGHTFUL GIFTS','伴手礼推荐与预算','按预算、顾客偏好与递送场景选择，一份得体的心意，也配上一项切实有用的服务。','04')+`<div class="filters" id="gift-filters"></div><div class="gift-grid" id="gift-grid"></div><div class="callout"><p>${esc(data.gifts?.priceDisclaimer||'展示价格为参考预算，请以下单页面实际价格为准。')}<br>${esc(data.gifts?.deliveryPolicy||'提前填写上海具体地址核验配送时效，建议使用日前三天完成准备。')}</p></div>`;
+    const gifts=heading('gifts','04 · THOUGHTFUL GIFTS','伴手礼推荐与预算','按预算、顾客偏好与递送场景选择，一份得体的心意，也配上一项切实有用的服务。','04')+`<div class="filters" id="gift-filters"></div><div id="gift-results"></div><div class="callout"><p>${esc(data.gifts?.priceDisclaimer||'展示价格为参考预算，请以下单页面实际价格为准。')}<br>${esc(data.gifts?.deliveryPolicy||'提前填写上海具体地址核验配送时效，建议使用日前三天完成准备。')}</p></div></section>`;
     const profCards=[['hmall图','项目组统一提供最新版本，下载后结合顾客关注点使用。'],['市场报告','由业务管理部门发布，项目组统一更新；使用时留意报告日期、统计范围与来源。']];
     const marketRelease=arr(a.professionalMaterials).find(item=>item.id==='market_report')?.releasePlan;
     const professional=heading('professional','05 · PROFESSIONAL RESOURCES','专业资料下载','根据顾客关注点准备专业内容，帮助客户比较选择，也让业主更清楚当前市场与后续安排。','05')+`<div class="professional-intro">${profCards.map(([title,text])=>`<article class="professional-card"><h3>${title}</h3><p>${text}</p>${title==='hmall图'?'<div id="hmall-material-list" class="hmall-material-list" hidden></div><div id="hmall-upload-root"></div>':''}${title==='市场报告'&&marketRelease?`<div class="market-release-note"><p><strong>${esc(marketRelease.title)}</strong></p><p>预计发布时间：${esc(marketRelease.expectedDate)}</p><p>${esc(marketRelease.series)}</p><p>暂定主题：<br>「${esc(marketRelease.tentativeTheme)}」</p></div>`:''}</article>`).join('')}</div><div class="material-list" id="material-list" hidden></div></section>`;
@@ -124,21 +124,52 @@
     const filtered=messages.filter(m=>messageFilter==='all'||(m.audienceId||m.audience)===messageFilter);
     document.getElementById('message-grid').innerHTML=filtered.map((m,i)=>`<details class="message-card" ${i===0?'open':''}><summary><h3>${esc(m.title)}</h3></summary><div class="message-inner"><div class="tags"><span class="tag">${esc(m.audience)}</span><span class="tag gold">${esc(m.scene||'感谢表达')}</span></div><p class="message-text">${esc(m.text||m.body||'')}</p>${m.customize?.length?`<p class="message-tip">发送前替换：${esc(arr(m.customize).join('、'))}</p>`:''}${m.note?`<p class="message-tip">${esc(m.note)}</p>`:''}<div class="card-actions"><button class="btn primary" data-copy-message="${esc(m.id)}">复制这段表达</button></div></div></details>`).join('');
   }
+  function giftCard(g) {
+    const availability=plain(g.availability||'');
+    const notes=[g.name,g.linkType,g.deliveryNote,availability].join(' ');
+    const stockLimited=/缺货|备选/.test(notes);
+    const inquiry=/询价|起订/.test(notes);
+    const badge=stockLimited?'备选 · 先核库存':inquiry?'需询价':g.category;
+    const isCatalogue=/搜索|选购|目录页|店铺|官方店/.test(g.linkType||'');
+    const linkLabel=inquiry?'查看并询价':isCatalogue?'前往选款':g.platform==='京东'?'打开京东商品':'查看商品';
+    const fields=[
+      ['适用对象',plain(g.recipient)],['规格',g.packSpec],['产地',g.originText],
+      ['发货',g.dispatchText],['采购渠道',g.shopText],['递送方式',g.mailOrFace],
+      ['链接类型',g.linkType],['价格依据',g.priceBasis],['选购建议',g.selectionNote],
+      ['库存提示',availability],['到货确认',g.deliveryNote||'下单前填写上海收货地址，核对库存与预计送达时间。']
+    ];
+    const price=g.estimatedPriceRange||g.budgetTier;
+    return `<article class="gift-card">
+      ${badge?`<span class="tag ${stockLimited||inquiry?'availability':'gold'}">${esc(badge)}</span>`:''}
+      <h3>${esc(g.name)}</h3>
+      ${price?`<p class="gift-price">${g.freshGift?'':'参考预算 · '}${esc(price)}</p>`:''}
+      <p class="gift-use">${esc(g.scenario)}</p>
+      <div class="gift-link"><a class="btn" href="${esc(safeUrl(g.purchaseUrl||g.fallbackUrl))}" target="_blank" rel="noopener noreferrer">${esc(linkLabel)} ↗</a></div>
+      <details class="gift-delivery"><summary>规格、选购与配送</summary><dl>${fields.filter(([,value])=>value).map(([label,value])=>`<dt>${label}</dt><dd>${esc(value)}</dd>`).join('')}</dl></details>
+    </article>`;
+  }
   function renderGifts() {
     const list=Array.isArray(data.gifts)?data.gifts:arr(data.gifts?.items||data.gifts?.gifts);
-    const options=[['all','全部心意'],['fruit','时令水果礼盒'],['≤30元','30元以内'],['30—60元','30—60元'],['>60元','60元以上']];
-    document.getElementById('gift-filters').innerHTML=options.map(([key,label])=>`<button class="filter-btn ${giftFilter===key?'active':''}" data-gift-filter="${key}">${label}</button>`).join('');
-    const filtered=list.filter(g=>giftFilter==='all'||(giftFilter==='fruit'?g.freshGift===true:g.budgetTier===giftFilter));
-    document.getElementById('gift-grid').innerHTML=filtered.map(g=>{
-      if(g.freshGift)return `<article class="gift-card fruit-gift-card"><div class="quick-top"><span class="gift-symbol">◈</span><span class="tag gold">${g.priority?'小份面见':'家庭分享'}</span></div><h3>${esc(g.name)}</h3><p class="gift-price">${esc(g.estimatedPriceRange)}</p><dl><dt>规格</dt><dd>${esc(g.packSpec)}</dd><dt>产地</dt><dd>${esc(g.originText)}</dd><dt>发货</dt><dd>${esc(g.dispatchText)}</dd></dl><div class="gift-link"><a class="btn" href="${esc(safeUrl(g.purchaseUrl))}" target="_blank" rel="noopener noreferrer">打开京东商品 ↗</a><small>${esc(g.linkType)}<br>${esc(g.priceBasis)}</small></div><details class="gift-delivery"><summary>查看适用场景、品质与到货确认</summary>${g.shopText?`<p><strong>采购渠道：</strong>${esc(g.shopText)}</p>`:''}<p><strong>适用场景：</strong>${esc(g.scenario)}</p><p><strong>递送方式：</strong>${esc(g.mailOrFace)}</p><p><strong>选购建议：</strong>${esc(g.selectionNote)}</p><p><strong>到货确认：</strong>${esc(g.deliveryNote)}</p></details></article>`;
-      const availability=plain(g.availability||'');
-      const limitations=[g.name,g.linkType,g.deliveryNote,availability].join(' ');
-      const stockLimited=/缺货|备选/.test(limitations);
-      const inquiry=/询价|起订/.test(limitations);
-      const label=g.freshGift?(g.priority?'礼盒优先选看':'鲜果礼盒候选'):stockLimited?'备选 · 先核库存':inquiry?'询价后选用':g.priority?'优先推荐':'';
-      const deliveryTitle=g.freshGift?'下单前确认礼盒、发货地与上海时效':stockLimited?'库存待核，缺货时不作采购主推':/5束起订/.test(limitations)?'需询价 · 参考团购5束起订':inquiry?'报价与库存需提前确认':'下单前核验上海地址与送达时间';
-      return `<article class="gift-card"><div class="quick-top"><span class="gift-symbol">${g.freshGift?'◈':g.category?.includes('花')?'❀':g.category?.includes('文')?'◇':'♧'}</span>${label?`<span class="tag ${stockLimited||inquiry?'availability':'gold'}">${esc(label)}</span>`:''}</div><h3>${esc(g.name)}</h3><p class="gift-price">${esc(g.estimatedPriceRange||g.budgetTier)}</p><dl>${g.packSpec?`<dt>规格</dt><dd>${esc(g.packSpec)}</dd>`:''}${g.originText?`<dt>产地</dt><dd>${esc(g.originText)}</dd>`:''}${g.dispatchText?`<dt>发货</dt><dd>${esc(g.dispatchText)}</dd>`:''}${g.shopText?`<dt>渠道</dt><dd>${esc(g.shopText)}</dd>`:''}<dt>对象</dt><dd>${esc(plain(g.recipient))}</dd><dt>场景</dt><dd>${esc(g.scenario)}</dd><dt>递送</dt><dd>${esc(g.mailOrFace)}</dd></dl><div class="gift-link"><a class="btn" href="${esc(safeUrl(g.purchaseUrl||g.fallbackUrl))}" target="_blank" rel="noopener noreferrer">${g.platform==='京东'?'打开京东商品':inquiry?'查看并询价':/搜索|选购|目录|店铺|官方店/.test(g.linkType||'')?'前往选款':'查看商品'} ↗</a><small>${esc(g.linkType||'选购参考入口')}<br>${esc(g.priceBasis||'参考预算，以下单实际价格为准')}</small></div><p class="gift-note">${esc(g.selectionNote||'')}</p><details class="gift-delivery" ${stockLimited?'open':''}><summary>${esc(deliveryTitle)}</summary><p>${esc(availability)}${availability&&g.deliveryNote?'<br>':''}${esc(g.deliveryNote||'提前选择上海具体收货地址，核验库存及预计送达日期。')}</p></details></article>`;
-    }).join('');
+    const options=[['all','全部礼品'],['fruit','时令水果礼盒'],['≤30元','30元以内'],['30—60元','30—60元'],['>60元','60元以上']];
+    const filters=document.getElementById('gift-filters');
+    if(!filters.childElementCount)filters.innerHTML=options.map(([key,label])=>`<button type="button" class="filter-btn" data-gift-filter="${esc(key)}">${label}</button>`).join('');
+    filters.querySelectorAll('button').forEach(button=>{
+      const active=button.dataset.giftFilter===giftFilter;
+      button.classList.toggle('active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+    const results=document.getElementById('gift-results');
+    if(giftFilter!=='all'){
+      const matches=list.filter(g=>giftFilter==='fruit'?g.freshGift===true:g.budgetTier===giftFilter);
+      results.innerHTML=`<p class="gift-count" role="status">共 ${matches.length} 款</p><div class="gift-grid" id="gift-grid">${matches.map(giftCard).join('')}</div>`;
+      return;
+    }
+    const selected=['g01','fruit01','g04'].map(id=>list.find(g=>g.id===id)).filter(Boolean);
+    const featured=[...new Set([...selected,...list.filter(g=>g.priority),...list])].slice(0,3);
+    const others=list.filter(g=>!featured.includes(g));
+    results.innerHTML=`<h3 class="gift-group-title">本月主推 <small>${featured.length} 款</small></h3>
+      <div class="gift-grid" id="gift-grid">${featured.map(giftCard).join('')}</div>
+      ${others.length?`<details class="gift-more"><summary>更多选择 <span>${others.length} 款</span></summary><div class="gift-grid">${others.map(giftCard).join('')}</div></details>`:''}`;
   }
   async function loadMaterials() {
     const el=document.getElementById('material-list'),extra=document.getElementById('supplement-material-list'),hmall=document.getElementById('hmall-material-list');if(!el||!extra||!hmall)return;
@@ -198,7 +229,15 @@
     document.getElementById('calc-result').innerHTML=`${Number(result.toFixed(2))}<small>元</small>`;
     document.getElementById('calc-explain').textContent=explanation;
   }
+  const compactLayout=window.matchMedia('(max-width: 1100px)');
+  function toolEntryId() {
+    return compactLayout.matches?'tools':'cards';
+  }
   function attach() {
+    const letterToolLink=document.getElementById('letter-tool-link');
+    const syncToolLink=()=>{letterToolLink.hash=toolEntryId();};
+    syncToolLink();
+    compactLayout.addEventListener('change',syncToolLink);
     app.addEventListener('click',event=>{
       const button=event.target.closest('button');if(!button)return;
       if(button.dataset.messageFilter!=null){messageFilter=button.dataset.messageFilter;renderMessages();return;}
@@ -211,7 +250,11 @@
     const directory=document.querySelector('.phone-directory');
     document.querySelectorAll('[data-section-link]').forEach(link=>link.addEventListener('click',()=>{if(directory)directory.open=false;}));
     if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){const id=entry.target.id==='consensus'?'start':entry.target.id;document.querySelectorAll('[data-section-link],#mobile-nav a').forEach(link=>link.classList.toggle('active',link.hash==='#'+id));}}},{rootMargin:'-10% 0px -65% 0px'});document.querySelectorAll('.section,#start').forEach(section=>observer.observe(section));}
-    if(location.hash)requestAnimationFrame(()=>{const target=document.getElementById(location.hash==='#together'?'feedback':location.hash.slice(1));if(target)target.scrollIntoView();});
+    if(location.hash)requestAnimationFrame(()=>{
+      const id=location.hash.slice(1);
+      const target=document.getElementById(id==='tools'?toolEntryId():id==='together'?'feedback':id);
+      if(target)target.scrollIntoView();
+    });
   }
   const letterEntryKey='landz-partner-letter-opened-2026-11';
   let entryOpening=false,entryTimer;
@@ -233,7 +276,7 @@
       setEntryVisible(false);rememberLetterOpening();entryOpening=false;entry.classList.remove('is-opening');
       entry.querySelectorAll('button').forEach(button=>button.disabled=false);
       const letter=document.querySelector('.welcome-letter-more');if(showLetter&&letter)letter.open=true;
-      const target=document.querySelector(showLetter?'#start h1':'#tool-launcher-title');
+      const target=showLetter?document.querySelector('#start h1'):document.querySelector('#'+toolEntryId()+' h2');
       if(target){target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({behavior:'instant',block:'start'});}
     },duration);
   }

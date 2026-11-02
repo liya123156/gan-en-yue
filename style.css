@@ -233,3 +233,25 @@ body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.s
 .professional-card .market-release-note p{margin:0;font-size:12px;line-height:1.9;color:#927b70;overflow-wrap:anywhere}
 .professional-card .market-release-note strong{font-weight:650;color:#805b6f}
 @media(max-width:760px){.professional-card .market-release-note p{font-size:13px}}
+
+/* Use the directory on wide screens and shortcut cards on narrow screens. */
+@media(min-width:1101px){.tool-launcher{display:none}}
+.companion-caption{margin:0;text-align:center;color:#896b52;font-size:13px;letter-spacing:.06em}
+
+/* Show the essentials first, with purchasing details on request. */
+.gift-group-title,.gift-count{color:#795569;margin:0 0 13px;line-height:1.6}
+.gift-group-title{font-size:18px}
+.gift-group-title small,.gift-count,.gift-more>summary span{color:#826d60;font-size:13px;font-weight:400}
+.gift-group-title small,.gift-more>summary span{margin-left:6px}
+#gift-results .gift-grid{align-items:start}
+#gift-results .gift-card{min-width:0;min-height:0}
+#gift-results .gift-card>.tag{align-self:flex-start;margin-bottom:9px}
+#gift-results .gift-card h3{margin-bottom:5px}
+#gift-results .gift-price{margin-bottom:7px}
+.gift-use{margin:0 0 14px;font-size:13px;line-height:1.75;color:#705e53}
+#gift-results .gift-delivery summary{font-size:12px;color:#825e41}
+#gift-results .gift-delivery dl{margin:10px 0 0;font-size:12px;line-height:1.8}
+.gift-more{margin-top:16px;padding:0 16px;border:1px solid #e3d2b9;border-radius:14px;background:#fffdf8}
+.gift-more>summary{padding:13px 0;color:#795569;font-weight:600;cursor:pointer}
+.gift-more>.gift-grid{margin:0 0 16px}
+@media(max-width:600px){#gift-results .gift-grid{grid-template-columns:1fr}.gift-more{padding:0 12px}}
