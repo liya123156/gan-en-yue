@@ -25,3 +25,137 @@ body{background:radial-gradient(ellipse at 92% 3%,#ffeccf66 0,transparent 28%),r
 @media(max-width:390px){.sales-body .hero h1{font-size:30px}.hero-guide{grid-template-columns:95px minmax(0,1fr)}.ip-portrait{width:95px;height:95px}.ip-speech{padding:11px 9px}.ip-speech p{font-size:11px}.ip-speech small{font-size:7px}.hero-actions{gap:14px}.closing-ip{display:none}}
 @media(prefers-reduced-motion:no-preference){.quick-card,.hero-cta,.btn,.filter-btn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}.quick-card:hover{transform:translateY(-3px);box-shadow:0 14px 25px #8f633d10}.hero-cta:hover{transform:translateY(-1px)}}
 @media print{body{background:#fff}.hero-guide,.tool-guide,.closing-ip{display:none}.hero-layout{display:block}.closing-banner{background:#fff8ee}.site-footer{padding-left:0}.sales-body .hero{background:#fff9ee;box-shadow:none}}
+
+/* A letter to every sales partner; tools follow the short opening. */
+.sales-body .letter-hero{padding:36px 38px;border-color:#e5cfaf;background:radial-gradient(ellipse at 100% 0,#fff1c9 0,transparent 52%),linear-gradient(125deg,#fffaf1,#fcf2eb 72%,#fff4df);box-shadow:0 14px 40px #9b74440a}
+.letter-hero .hero-layout{grid-template-columns:minmax(0,1fr) 230px;gap:32px;align-items:center}
+.letter-hero:after{opacity:.45}
+.letter-hero .hero-content{position:relative;z-index:1;min-width:0}
+.letter-hero .eyebrow{font-size:10px;letter-spacing:1.8px;margin:0 0 9px;color:#997342}
+.letter-hero .hero-tool-name{font-size:12px;line-height:1.6;letter-spacing:1.2px;color:#886d58;margin:0 0 14px}
+.sales-body .letter-hero h1{font-family:"Songti SC",STSong,SimSun,serif;font-size:clamp(29px,3vw,39px);font-weight:500;line-height:1.45;letter-spacing:.03em;margin:0 0 21px;max-width:none;color:#45363d}
+.letter-hero h1 em{color:#80566d;font-style:normal}
+.letter-hero .letter-salutation{font-size:15px;line-height:1.8;color:#775064;margin:0 0 8px}
+.letter-hero .letter-intro,.letter-hero .letter-rest{color:#65534e;font-size:15px;line-height:1.95;overflow-wrap:anywhere}
+.letter-hero .letter-intro p,.letter-hero .letter-rest p{margin:0 0 10px}
+.letter-hero .letter-intro p:last-child{margin-bottom:0}
+.welcome-letter-more{margin-top:12px;min-width:0}
+.welcome-letter-more>summary{cursor:pointer;display:flex;align-items:center;gap:11px;min-height:40px;width:max-content;max-width:100%;font-size:13px;font-weight:600;line-height:1.6;color:#86516f;list-style:none}
+.welcome-letter-more>summary::-webkit-details-marker{display:none}
+.welcome-letter-more>summary:after{content:"＋";font-size:15px;font-weight:400}
+.welcome-letter-more[open]>summary:after{content:"−"}
+.welcome-letter-more .letter-rest{padding-top:2px}
+.letter-hero .letter-rest .letter-signature{font-family:"Songti SC",STSong,SimSun,serif;text-align:right;color:#80556b;letter-spacing:.06em;margin:14px 0 0;padding-top:9px}
+.letter-hero .hero-guide{align-self:center;position:relative;z-index:1}
+.letter-hero .ip-portrait{width:100%;max-width:230px;margin:0 auto 9px}
+.letter-hero .ip-speech{background:#fffdf8dd;border-color:#e4cfad;box-shadow:0 8px 21px #96724808}
+.letter-hero .ip-speech p{color:#79526a;font-size:14px}
+.tool-launcher{scroll-margin-top:18px;margin:25px 0 20px}
+.tool-launcher-heading{margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;column-gap:16px;row-gap:6px}
+.tool-launcher-heading h2{font-size:21px;line-height:1.6;font-weight:600;color:#775067;letter-spacing:.02em;margin:0}
+.tool-launcher-heading p{font-size:12px;line-height:1.8;color:#806d60;margin:0}
+.tool-launcher .quick-grid{margin:0;gap:13px}
+.sales-body .tool-launcher .quick-card{min-width:0;min-height:157px;padding:20px;background:linear-gradient(145deg,#fffefb,#fff9ef);border-color:#e6d5bd;box-shadow:0 7px 21px #92704406}
+.tool-launcher .quick-icon{background:#f8eddf;color:#946c4f}
+.tool-launcher .quick-number{color:#aa8c64}
+.sales-body .tool-launcher .quick-card h3{color:#765067;font-size:16px;margin:12px 0 7px}
+.sales-body .tool-launcher .quick-card p{font-size:13px;line-height:1.75;color:#7c695c}
+.tool-launcher .quick-card .arrow{margin-top:7px;color:#987547}
+.mobile-companion{display:none}
+.sales-body .usage-guide{margin:19px 0 0;padding:17px 22px;background:#fffaf1;border:1px solid #e7d7c0;border-radius:16px}
+.usage-guide>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:14px;row-gap:3px;cursor:pointer;list-style:none;min-height:40px;color:#785369}
+.usage-guide>summary::-webkit-details-marker,.guide-disclosure>summary::-webkit-details-marker{display:none}
+.usage-guide>summary:after,.guide-disclosure>summary:after{content:"＋";font-size:19px;font-weight:400;color:#ac8752;flex:0 0 auto}
+.usage-guide[open]>summary:after,.guide-disclosure[open]>summary:after{content:"−"}
+.usage-guide>summary h2{font-size:17px;line-height:1.65;font-weight:600;margin:0;color:#785369}
+.usage-guide>summary>span,.guide-disclosure>summary>span{grid-column:1;font-size:17px;line-height:1.65;font-weight:600;color:#785369}
+.usage-guide>summary>small,.guide-disclosure>summary>small{grid-column:1;font-size:12px;line-height:1.75;font-weight:400;color:#8a7260}
+.usage-guide>summary:after,.guide-disclosure>summary:after{grid-column:2;grid-row:1 / span 2;align-self:center}
+.usage-guide .sales-aim-grid{margin:19px 0 5px}
+.usage-guide .sales-aim-grid p{color:#756157;font-size:13px;line-height:1.85}
+.guide-disclosure{margin-top:14px;background:#fffdf8;border:1px solid #e5d4bb;border-radius:17px;padding:18px 20px}
+.guide-disclosure>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px;row-gap:3px;cursor:pointer;min-height:42px;list-style:none;font-size:17px;line-height:1.65;color:#775067;font-weight:600}
+.guide-disclosure>.consensus-grid{margin-top:18px}
+.guide-disclosure>.section-heading{margin-top:18px}
+.guide-disclosure .consensus-grid .surface{box-shadow:none;border-color:#eadfce}
+.guide-disclosure .reading{color:#68574f}
+.sales-body>.phone-directory{margin:15px 0 0;border-color:#e7d7c0;background:#fffdf8}
+.letter-share{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px;padding-top:13px;border-top:1px solid #e8d8c1}
+.letter-share .btn{min-height:40px;font-size:12px;line-height:1.6;background:#fffcf6}
+@media(min-width:1500px){.sales-body .letter-hero{padding:40px 45px}.letter-hero .hero-layout{grid-template-columns:minmax(0,1fr) 270px;gap:40px}.letter-hero .ip-portrait{max-width:270px}}
+@media(max-width:1100px) and (min-width:761px){.letter-hero .hero-layout{grid-template-columns:minmax(0,1fr) 200px;gap:25px}.sales-body .letter-hero{padding:30px}.sales-body .letter-hero h1{font-size:33px}}
+@media(max-width:760px){
+ .site-header{padding:16px 18px}
+ .sales-body .letter-hero{padding:21px 21px 17px;border-radius:20px}
+ .letter-hero .hero-layout{display:block}
+ .letter-hero .hero-guide{display:none}
+ .letter-hero .eyebrow{font-size:9px;letter-spacing:1px;margin-bottom:6px}
+ .letter-hero .hero-tool-name{font-size:11px;line-height:1.6;letter-spacing:.5px;margin-bottom:11px}
+ .sales-body .letter-hero h1{font-size:27px;line-height:1.42;letter-spacing:.02em;margin-bottom:14px}
+ .letter-hero .letter-salutation{font-size:14px;line-height:1.8;margin-bottom:5px}
+ .letter-hero .letter-intro,.letter-hero .letter-rest{font-size:14px;line-height:1.85;color:#63514b}
+ .letter-hero .letter-intro p,.letter-hero .letter-rest p{margin-bottom:8px}
+ .letter-hero .letter-intro p:last-child{margin-bottom:0}
+ .welcome-letter-more{margin-top:5px}
+ .welcome-letter-more>summary{font-size:13px;min-height:40px}
+ .letter-hero .letter-rest .letter-signature{margin-top:12px;padding-top:5px}
+ .tool-launcher{margin:19px 0 0}
+ .tool-launcher-heading{display:block;margin-bottom:11px}
+ .tool-launcher-heading h2{font-size:17px;line-height:1.55;letter-spacing:0}
+ .tool-launcher-heading p{font-size:12px;line-height:1.7;margin-top:4px}
+ .tool-launcher .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+ .sales-body .tool-launcher .quick-card{min-height:122px;padding:13px 12px;border-radius:13px;box-shadow:none}
+ .tool-launcher .quick-top{align-items:center}
+ .tool-launcher .quick-icon{width:25px;height:25px;border-radius:8px;font-size:16px}
+ .tool-launcher .quick-number{font-size:10px}
+ .sales-body .tool-launcher .quick-card h3{font-size:15px;line-height:1.5;margin:7px 0 4px;color:#744c63}
+ .sales-body .tool-launcher .quick-card p{font-size:12px;line-height:1.65;color:#766257}
+ .tool-launcher .quick-card .arrow{display:none}
+ .mobile-companion{display:flex;align-items:center;gap:11px;margin:13px 0 0;padding:10px 12px;background:#fff7e8;border:1px solid #ead8b9;border-radius:13px}
+ .mobile-companion>img{display:block;width:47px;height:47px;object-fit:contain;flex:0 0 47px}
+ .mobile-companion>div{min-width:0}
+ .mobile-companion strong{font-size:12px;font-weight:600;line-height:1.7;color:#81556a}
+ .mobile-companion p{font-size:13px;line-height:1.75;color:#705d54;margin:2px 0 0}
+ .sales-body>.phone-directory{margin-top:13px;border-radius:12px}
+ .phone-directory>summary{min-height:45px;padding:11px 13px}
+ .phone-directory>summary>span{font-size:13px;color:#755168}
+ .phone-directory>summary>b{font-size:11px;line-height:1.6;color:#8a7264}
+ .phone-directory .directory-links>a{min-height:44px;padding:11px 12px}
+ .phone-directory .directory-links>a>b{font-size:13px}
+ .sales-body .usage-guide{padding:11px 14px;margin-top:13px;border-radius:12px}
+ .usage-guide>summary{min-height:42px;gap:10px}
+ .usage-guide>summary h2{font-size:15px;line-height:1.7}
+ .usage-guide>summary>span,.guide-disclosure>summary>span{font-size:15px;line-height:1.7}
+ .usage-guide>summary>small,.guide-disclosure>summary>small{font-size:12px;line-height:1.75}
+ .usage-guide .sales-aim-grid{gap:17px;margin:16px 0 7px}
+ .usage-guide .sales-aim-grid h3{font-size:14px;line-height:1.65}
+ .usage-guide .sales-aim-grid p{font-size:14px;line-height:1.8;color:#6c5a50}
+ .guide-disclosure{padding:12px 14px;margin-top:12px;border-radius:13px}
+ .guide-disclosure>summary{font-size:15px;line-height:1.7;gap:10px;min-height:44px}
+ .guide-disclosure .consensus-grid{margin-top:15px}
+ .section{margin-top:29px;margin-bottom:29px;scroll-margin-top:14px}
+ .section-intro,.surface p,.reading,.message-text,.professional-card p,.gift-card dl,.generic-list li,.transaction-editor{font-size:14px;line-height:1.85;color:#68574f}
+ .section h2{font-size:22px;line-height:1.5}
+ .section-kicker{font-size:9px;letter-spacing:.8px}
+ .reading h4,.surface h3{font-size:15px;line-height:1.7}
+ .guide-facts li{font-size:13px;line-height:1.8;color:#6d5a50}
+ .guide-facts strong{flex-basis:58px}
+ .tool-guide p,.tool-guide strong{font-size:13px;line-height:1.8;color:#715c54}
+ .message-guide{font-size:12px;line-height:1.7}
+ .message-card h3,.professional-card h3{font-size:15px;line-height:1.65}
+ .message-tip,.gift-note,.gift-delivery summary,.gift-delivery p,.file-info p,.template-intro{font-size:12px!important;line-height:1.8;color:#836d5f!important}
+ .filter-btn,.card-actions .btn,.material-row .btn{font-size:13px;min-height:42px}
+ .material-row{min-width:0;gap:11px;padding:16px 14px}
+ .file-info h3{font-size:14px;line-height:1.7;color:#745167}
+ .closing-banner .closing-lead{font-size:21px}
+ .closing-banner>div>p:not(.closing-lead){font-size:14px;line-height:1.85;color:#705a50}
+ .callout{font-size:13px;color:#745e54}
+ .callout p{font-size:13px;line-height:1.85;color:#745e54}
+ .letter-share{gap:8px;margin-top:14px;padding-top:12px}
+ .letter-share .btn{font-size:13px;min-height:42px;padding:9px 12px}
+ .mobile-nav{padding-bottom:max(8px,env(safe-area-inset-bottom));background:#fffaf4fa}
+ .mobile-nav a{min-height:46px;font-size:12px;color:#846a58}
+ .mobile-nav a.active{color:#744762}
+}
+@media(max-width:374px){.sales-body .letter-hero{padding:19px 18px 15px}.sales-body .letter-hero h1{font-size:25px}.tool-launcher-heading h2{font-size:16px}.sales-body .tool-launcher .quick-card{padding:12px 11px;min-height:124px}.sales-body .tool-launcher .quick-card p{font-size:12px}.mobile-companion{padding:9px 10px}}
+@media print{.letter-hero .hero-guide,.mobile-companion,.welcome-letter-more>summary,.tool-launcher{display:none!important}.letter-hero .letter-rest{display:block!important}.sales-body .letter-hero{padding:22px;background:#fffcf6;box-shadow:none}.sales-body .letter-hero h1{font-size:27px}.letter-hero .letter-intro,.letter-hero .letter-rest{font-size:12px;line-height:1.85}.usage-guide,.guide-disclosure{break-inside:auto}.usage-guide .sales-aim-grid,.guide-disclosure>*{display:block!important}.guide-disclosure>summary,.usage-guide>summary:after{display:none!important}}
