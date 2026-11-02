@@ -255,3 +255,12 @@ body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.s
 .gift-more>summary{padding:13px 0;color:#795569;font-weight:600;cursor:pointer}
 .gift-more>.gift-grid{margin:0 0 16px}
 @media(max-width:600px){#gift-results .gift-grid{grid-template-columns:1fr}.gift-more{padding:0 12px}}
+
+/* Scenario directory: short rows until the reader chooses a message. */
+#message-filters .filter-btn small{font-size:.85em;margin-left:3px}
+#message-grid{grid-template-columns:minmax(0,1fr);gap:9px}
+#message-grid .message-card{border-radius:13px}
+#message-grid .message-card summary{padding:13px 18px;min-height:46px}
+#message-grid .message-card h3{display:flex;align-items:baseline;gap:13px}
+#message-grid .scene-no{font:italic 14px Georgia,serif;color:#966f44}
+#message-grid .message-inner{max-width:820px;padding:6px 18px 19px}

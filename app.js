@@ -62,7 +62,7 @@
     return arr(items).map((item,i)=>`<div class="numbered-item"><b>${esc(item?.no || '①②③④⑤⑥⑦⑧⑨⑩'[i] || (i+1))}</b><div>${typeof item==='string'?textBlock(item):`<strong>${esc(item.title||'')}</strong>${textBlock(item.text || item.detail || item.action || '')}`}</div></div>`).join('');
   }
   const heading = (id,kicker,title,description,no='') => `<section class="section" id="${id}"><div class="section-heading"><div><p class="section-kicker">${esc(kicker)}</p><h2>${esc(title)}</h2>${description?`<p class="section-intro">${esc(description)}</p>`:''}</div><span class="section-number" aria-hidden="true">${esc(no)}</span></div>`;
-  let data, messageFilter='all', giftFilter='all', toastTimer;
+  let data, messageFilter='owner_on_sale', giftFilter='all', toastTimer;
   function toast(text) {const el=document.getElementById('toast');clearTimeout(toastTimer);el.textContent=text;el.classList.add('show');toastTimer=setTimeout(()=>el.classList.remove('show'),2500);}
   async function copy(text,success='已复制，补上真实细节后就可以发送') {
     try {
@@ -97,7 +97,7 @@
     const quick=`<section class="tool-launcher" id="tools" aria-labelledby="tool-launcher-title"><div class="tool-launcher-heading"><h2 id="tool-launcher-title">常用工具</h2></div><div class="quick-grid">${shortcuts.map((q,i)=>`<a class="quick-card" href="#${esc(q.id)}"><div class="quick-top"><span class="quick-icon">${icons[q.id]||'✧'}</span><span class="quick-number">0${i+2}</span></div><h3>${esc(q.title)}</h3><p>${esc(q.description)}</p><span class="arrow" aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
     const consensus=heading('consensus','01 · ACTION GUIDE','感恩月目标与行动说明','11月1日—30日，把心里的感谢主动表达出来，也把顾客当下需要的服务准备好。','01')+`<div class="action-guide-body"><h3 class="guide-title">目标、服务对象与行动重点</h3><div class="consensus-grid"><article class="surface consensus-main"><p class="quote-line">珍惜顾客的信任，从主动理解他的需要开始。</p><div class="reading"><p>顾客愿意分享家庭的需要、房产的安排与重要的选择，让我们的专业有了创造价值的机会。感恩利他，体现在记得对方关心的事，也愿意主动了解新的想法，并随需求变化调整服务。</p><p>这个月，我们面向全量业主与客户主动表达感谢；在售业主重点推进线下面见。一次真诚的问候、一份有用的信息、一张定制贺卡、一项认真完成的服务，都可以让感谢被感受到。</p></div><div class="callout"><p><strong>先倾听 → 再准备 → 主动表达 → 持续跟进</strong><br>让顾客更了解你的专业与用心，也更了解丽兹行能够为他做什么。</p></div></article><article class="surface"><h3>为什么在11月，一起行动？</h3><div class="reading"><p>11月有集中表达感谢的文化契机。丽兹行每年的感恩月，通过国王与天使传递伙伴间的感谢，通过爱心义卖参与社会回馈，也把这份感谢带进与顾客的日常服务。</p><p>感恩在每一天，11月更主动地表达。这里统一准备了感性表达与专业服务工具，方便你根据顾客的关系、当前需求和服务阶段，快速选择、个性定制并直接使用。</p></div><ul class="guide-facts"><li><strong>服务对象</strong><span>全量业主与客户；保安、物业、管家另作感谢与记录。</span></li><li><strong>行动重点</strong><span>全量线上表达，在售业主重点面见，服务随需求变化调整。</span></li><li><strong>物料用途</strong><span>顾客表达、主动联系、面见准备与后续专业服务。</span></li></ul></article></div><div class="guide-audiences"><h3 class="guide-title">对象分类与建议服务深度</h3><div class="reading audience-grid">${arr(a.audiences).sort((x,y)=>(x.order||0)-(y.order||0)).map(x=>`<article class="audience-card"><span class="tag ${x.priority?.includes('S')?'gold':''}">${esc(x.priority||x.category||'服务对象')}</span><h3>${esc(x.label||x.type||x.category||'顾客服务')}</h3><p>${esc(x.online||x.action||'主动表达感谢，提供具体服务。')}</p><p>${esc(x.depth||'')}</p></article>`).join('')}</div></div></div></section>`;
     const cards=heading('cards','02 · PERSONALIZED CARDS','贺卡定制与下载','5种商务风格，配有线上发送版和A6线下面见版；选择设计后，编辑内容即可预览与下载。','02')+`<div class="tool-guide"><img src="media/dr-lans.webp" alt="" width="56" height="56" loading="lazy"><p><strong>兰斯博士的小提示</strong>先选择适合顾客的风格，再写入真实的感谢与下一步服务；五种设计可随时切换。</p></div><div id="card-maker-root"></div><details class="more-content template-downloads"><summary>查看并下载10款贺卡样张</summary><p class="template-intro">线上5款、线下5款。可先查看设计，正式发送前请在上方编辑称呼、正文和署名；线下PDF按A6横版实际大小打印。</p><div id="template-gallery" class="template-gallery"><p class="template-intro">正在打开贺卡样张…</p></div></details></section>`;
-    const messages=heading('messages','03 · CLIENT COMMUNICATION','分场景感谢文案','选好场景，复制微信正文，把称呼和示例细节换成你们之间的真事。','03')+`<div class="message-guide"><strong>推荐表达顺序</strong><span>感谢一段真实经历</span><i>→</i><span>了解当下的需要</span><i>→</i><span>提出具体的服务</span></div><div class="filters" id="message-filters"></div><div class="message-grid" id="message-grid"></div><div class="callout"><p>复制后，按你平时和对方说话的习惯改一改。涉及带看、成交或市场数据，只使用已核实且可以分享的信息。</p></div></section>`;
+    const messages=heading('messages','03 · CLIENT COMMUNICATION','分场景感谢文案','先选服务对象，再点开这次联系的场景。复制正文后，把示例换成你们之间的真事。','03')+`<div class="message-guide"><strong>推荐表达顺序</strong><span>感谢一段真实经历</span><i>→</i><span>了解当下的需要</span><i>→</i><span>提出具体的服务</span></div><div class="filters" id="message-filters" role="group" aria-label="文案分类目录"></div><div class="message-grid" id="message-grid"></div><div class="callout"><p>复制后，按你平时和对方说话的习惯改一改。涉及带看、成交或市场数据，只使用已核实且可以分享的信息。</p></div></section>`;
     const gifts=heading('gifts','04 · THOUGHTFUL GIFTS','伴手礼推荐与预算','按预算、顾客偏好与递送场景选择，一份得体的心意，也配上一项切实有用的服务。','04')+`<div class="filters" id="gift-filters"></div><div id="gift-results"></div><div class="callout"><p>${esc(data.gifts?.priceDisclaimer||'展示价格为参考预算，请以下单页面实际价格为准。')}<br>${esc(data.gifts?.deliveryPolicy||'提前填写上海具体地址核验配送时效，建议使用日前三天完成准备。')}</p></div></section>`;
     const profCards=[['hmall图','项目组统一提供最新版本，下载后结合顾客关注点使用。'],['市场报告','由业务管理部门发布，项目组统一更新；使用时留意报告日期、统计范围与来源。']];
     const marketRelease=arr(a.professionalMaterials).find(item=>item.id==='market_report')?.releasePlan;
@@ -119,10 +119,32 @@
   }
   function renderMessages() {
     const messages=arr(data.action?.messages);
-    const options=[['all','全部场景'],...new Map(messages.map(x=>[x.audienceId||x.audience,x.audience||x.audienceId])).entries()];
-    document.getElementById('message-filters').innerHTML=options.map(([key,label])=>`<button class="filter-btn ${messageFilter===key?'active':''}" data-message-filter="${esc(key)}">${esc(label)}</button>`).join('');
-    const filtered=messages.filter(m=>messageFilter==='all'||(m.audienceId||m.audience)===messageFilter);
-    document.getElementById('message-grid').innerHTML=filtered.map((m,i)=>`<details class="message-card" ${i===0?'open':''}><summary><h3>${esc(m.title)}</h3></summary><div class="message-inner"><div class="tags"><span class="tag">${esc(m.audience)}</span><span class="tag gold">${esc(m.scene||'感谢表达')}</span></div><p class="message-text">${esc(m.text||m.body||'')}</p>${m.customize?.length?`<p class="message-tip">发送前核对：${esc(arr(m.customize).join('、'))}</p>`:''}${m.note?`<p class="message-tip">${esc(m.note)}</p>`:''}<div class="card-actions"><button class="btn primary" data-copy-message="${esc(m.id)}">复制微信正文</button></div></div></details>`).join('');
+    const groupKey=m=>m.audienceId||m.audience;
+    const groups=new Map();
+    for(const m of messages){
+      const key=groupKey(m);
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key).push(m);
+    }
+    if(!groups.has(messageFilter))messageFilter=groups.keys().next().value;
+    const filters=document.getElementById('message-filters');
+    if(!filters.childElementCount){
+      filters.innerHTML=Array.from(groups,([key,items])=>{
+        const label=key==='all_customers'?'顾客通用场景':items[0].audience||key;
+        return `<button type="button" class="filter-btn" data-message-filter="${esc(key)}" aria-controls="message-grid">${esc(label)} <small>${items.length}</small></button>`;
+      }).join('');
+    }
+    filters.querySelectorAll('button').forEach(button=>{
+      const selected=button.dataset.messageFilter===messageFilter;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-pressed',String(selected));
+    });
+    const filtered=groups.get(messageFilter)||[];
+    const grid=document.getElementById('message-grid');
+    grid.innerHTML=filtered.map((m,i)=>{
+      const title=(m.title||'场景文案').replace(/^(?:在售业主|非在售业主|全盘非在售业主|已成交客户|未成交客户|物业、保安、管家|保安、物业、管家)｜/,'');
+      return `<details class="message-card" name="message-scene"><summary><h3><span class="scene-no" aria-hidden="true">${String(i+1).padStart(2,'0')}</span>${esc(title)}</h3></summary><div class="message-inner"><div class="tags"><span class="tag gold">${esc(m.scene||'感谢表达')}</span></div><p class="message-text">${esc(m.text||m.body||'')}</p>${m.customize?.length?`<p class="message-tip">发送前核对：${esc(arr(m.customize).join('、'))}</p>`:''}${m.note?`<p class="message-tip">${esc(m.note)}</p>`:''}<div class="card-actions"><button type="button" class="btn primary" data-copy-message="${esc(m.id)}">复制微信正文</button></div></div></details>`;
+    }).join('');
   }
   function giftCard(g) {
     const availability=plain(g.availability||'');
@@ -240,7 +262,7 @@
     compactLayout.addEventListener('change',syncToolLink);
     app.addEventListener('click',event=>{
       const button=event.target.closest('button');if(!button)return;
-      if(button.dataset.messageFilter!=null){messageFilter=button.dataset.messageFilter;renderMessages();return;}
+      if(button.dataset.messageFilter!=null){if(messageFilter!==button.dataset.messageFilter){messageFilter=button.dataset.messageFilter;renderMessages();}return;}
       if(button.dataset.giftFilter!=null){giftFilter=button.dataset.giftFilter;renderGifts();return;}
       if(button.dataset.copyMessage){const m=arr(data.action?.messages).find(x=>x.id===button.dataset.copyMessage);if(m)copy(m.text||m.body||'','微信正文已复制，空行和表情已保留');return;}
       if(button.hasAttribute('data-reopen-letter')){reopenPartnerLetter();return;}
