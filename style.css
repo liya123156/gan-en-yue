@@ -64,21 +64,22 @@ body{background:radial-gradient(ellipse at 92% 3%,#ffeccf66 0,transparent 28%),r
 .mobile-companion{display:none}
 .sales-body .usage-guide{margin:19px 0 0;padding:17px 22px;background:#fffaf1;border:1px solid #e7d7c0;border-radius:16px}
 .usage-guide>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:14px;row-gap:3px;cursor:pointer;list-style:none;min-height:40px;color:#785369}
-.usage-guide>summary::-webkit-details-marker,.guide-disclosure>summary::-webkit-details-marker{display:none}
-.usage-guide>summary:after,.guide-disclosure>summary:after{content:"＋";font-size:19px;font-weight:400;color:#ac8752;flex:0 0 auto}
-.usage-guide[open]>summary:after,.guide-disclosure[open]>summary:after{content:"−"}
+.usage-guide>summary::-webkit-details-marker{display:none}
+.usage-guide>summary:after{content:"＋";font-size:19px;font-weight:400;color:#ac8752;flex:0 0 auto}
+.usage-guide[open]>summary:after{content:"−"}
 .usage-guide>summary h2{font-size:17px;line-height:1.65;font-weight:600;margin:0;color:#785369}
-.usage-guide>summary>span,.guide-disclosure>summary>span{grid-column:1;font-size:17px;line-height:1.65;font-weight:600;color:#785369}
-.usage-guide>summary>small,.guide-disclosure>summary>small{grid-column:1;font-size:12px;line-height:1.75;font-weight:400;color:#8a7260}
-.usage-guide>summary:after,.guide-disclosure>summary:after{grid-column:2;grid-row:1 / span 2;align-self:center}
+.usage-guide>summary>span{grid-column:1;font-size:17px;line-height:1.65;font-weight:600;color:#785369}
+.usage-guide>summary>small{grid-column:1;font-size:12px;line-height:1.75;font-weight:400;color:#8a7260}
+.usage-guide>summary:after{grid-column:2;grid-row:1 / span 2;align-self:center}
 .usage-guide .sales-aim-grid{margin:19px 0 5px}
 .usage-guide .sales-aim-grid p{color:#756157;font-size:13px;line-height:1.85}
-.guide-disclosure{margin-top:14px;background:#fffdf8;border:1px solid #e5d4bb;border-radius:17px;padding:18px 20px}
-.guide-disclosure>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px;row-gap:3px;cursor:pointer;min-height:42px;list-style:none;font-size:17px;line-height:1.65;color:#775067;font-weight:600}
-.guide-disclosure>.consensus-grid{margin-top:18px}
-.guide-disclosure>.section-heading{margin-top:18px}
-.guide-disclosure .consensus-grid .surface{box-shadow:none;border-color:#eadfce}
-.guide-disclosure .reading{color:#68574f}
+.action-guide-body{margin-top:14px;background:#fffdf8;border:1px solid #e5d4bb;border-radius:17px;padding:18px 20px}
+.action-guide-body .guide-title{margin:0;font-size:17px;line-height:1.65;color:#775067;font-weight:600}
+.guide-audiences{margin-top:18px}
+.guide-audiences>.audience-grid{margin-top:12px}
+.action-guide-body>.consensus-grid{margin-top:18px}
+.action-guide-body .consensus-grid .surface{box-shadow:none;border-color:#eadfce}
+.action-guide-body .reading{color:#68574f}
 .sales-body>.phone-directory{margin:15px 0 0;border-color:#e7d7c0;background:#fffdf8}
 .letter-share{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px;padding-top:13px;border-top:1px solid #e8d8c1}
 .letter-share .btn{min-height:40px;font-size:12px;line-height:1.6;background:#fffcf6}
@@ -125,14 +126,14 @@ body{background:radial-gradient(ellipse at 92% 3%,#ffeccf66 0,transparent 28%),r
  .sales-body .usage-guide{padding:11px 14px;margin-top:13px;border-radius:12px}
  .usage-guide>summary{min-height:42px;gap:10px}
  .usage-guide>summary h2{font-size:15px;line-height:1.7}
- .usage-guide>summary>span,.guide-disclosure>summary>span{font-size:15px;line-height:1.7}
- .usage-guide>summary>small,.guide-disclosure>summary>small{font-size:12px;line-height:1.75}
+ .usage-guide>summary>span{font-size:15px;line-height:1.7}
+ .usage-guide>summary>small{font-size:12px;line-height:1.75}
  .usage-guide .sales-aim-grid{gap:17px;margin:16px 0 7px}
  .usage-guide .sales-aim-grid h3{font-size:14px;line-height:1.65}
  .usage-guide .sales-aim-grid p{font-size:14px;line-height:1.8;color:#6c5a50}
- .guide-disclosure{padding:12px 14px;margin-top:12px;border-radius:13px}
- .guide-disclosure>summary{font-size:15px;line-height:1.7;gap:10px;min-height:44px}
- .guide-disclosure .consensus-grid{margin-top:15px}
+ .action-guide-body{padding:12px 14px;margin-top:12px;border-radius:13px}
+ .action-guide-body .guide-title{font-size:15px;line-height:1.7}
+ .action-guide-body .consensus-grid{margin-top:15px}
  .section{margin-top:29px;margin-bottom:29px;scroll-margin-top:14px}
  .section-intro,.surface p,.reading,.message-text,.professional-card p,.gift-card dl,.generic-list li,.transaction-editor{font-size:14px;line-height:1.85;color:#68574f}
  .section h2{font-size:22px;line-height:1.5}
@@ -158,7 +159,7 @@ body{background:radial-gradient(ellipse at 92% 3%,#ffeccf66 0,transparent 28%),r
  .mobile-nav a.active{color:#744762}
 }
 @media(max-width:374px){.sales-body .letter-hero{padding:19px 18px 15px}.sales-body .letter-hero h1{font-size:25px}.tool-launcher-heading h2{font-size:16px}.sales-body .tool-launcher .quick-card{padding:12px 11px;min-height:124px}.sales-body .tool-launcher .quick-card p{font-size:12px}.mobile-companion{padding:9px 10px}}
-@media print{.letter-hero .hero-guide,.mobile-companion,.welcome-letter-more>summary,.tool-launcher{display:none!important}.letter-hero .letter-rest{display:block!important}.sales-body .letter-hero{padding:22px;background:#fffcf6;box-shadow:none}.sales-body .letter-hero h1{font-size:27px}.letter-hero .letter-intro,.letter-hero .letter-rest{font-size:12px;line-height:1.85}.usage-guide,.guide-disclosure{break-inside:auto}.usage-guide .sales-aim-grid,.guide-disclosure>*{display:block!important}.guide-disclosure>summary,.usage-guide>summary:after{display:none!important}}
+@media print{.letter-hero .hero-guide,.mobile-companion,.welcome-letter-more>summary,.tool-launcher{display:none!important}.letter-hero .letter-rest{display:block!important}.sales-body .letter-hero{padding:22px;background:#fffcf6;box-shadow:none}.sales-body .letter-hero h1{font-size:27px}.letter-hero .letter-intro,.letter-hero .letter-rest{font-size:12px;line-height:1.85}.usage-guide,.action-guide-body{break-inside:auto}.usage-guide .sales-aim-grid,.action-guide-body>*{display:block!important}.usage-guide>summary:after{display:none!important}}
 
 /* Partner letter: salutation, indented paragraphs, signature and date. */
 .letter-hero h1:focus{outline:none}.letter-tools-next{margin:18px 0 6px}.letter-tools-next .btn{min-height:44px}
