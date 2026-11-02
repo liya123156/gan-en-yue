@@ -1,0 +1,31 @@
+/* Card-local publishing for project administrators. */
+.hmall-uploader,.hmall-material-list{min-width:0;max-width:100%}
+.hmall-uploader{margin-top:12px}
+.hmall-uploader [hidden],.hmall-material-list[hidden]{display:none!important}
+.hmall-upload-toggle,.hmall-upload-close,.hmall-upload-logout{font:inherit;cursor:pointer;background:transparent;border:0;color:#805c74;text-decoration:underline;text-underline-offset:4px}
+.hmall-upload-toggle{font-size:13px;line-height:1.6;min-height:40px;padding:5px 0;text-align:left}
+.hmall-upload-toggle:hover,.hmall-upload-close:hover,.hmall-upload-logout:hover{color:#5e3e57}
+.hmall-upload-panel{margin-top:8px;padding:16px 14px;border:1px solid #dfc8a7;border-radius:14px;background:#fff9ef;box-sizing:border-box;min-width:0}
+.hmall-upload-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.hmall-upload-heading h4{font-size:15px;font-weight:600;line-height:1.65;color:#77516a;margin:0}
+.hmall-upload-close,.hmall-upload-logout{font-size:12px;line-height:1.7;min-height:40px;padding:7px 0;flex-shrink:0}
+.hmall-uploader .hmall-upload-note{font-size:12px!important;line-height:1.8!important;color:#8c7464!important;margin:4px 0 10px;overflow-wrap:anywhere}
+.hmall-uploader .hmall-upload-status{font-size:13px!important;line-height:1.75!important;color:#79596c!important;margin:0 0 10px;overflow-wrap:anywhere}
+.hmall-uploader .hmall-upload-status:empty{display:none}
+.hmall-uploader .hmall-upload-status[data-state=error]{color:#a54f4f!important}
+.hmall-uploader .hmall-upload-status[data-state=success]{color:#5f785d!important}
+.hmall-uploader label{display:block;font-size:13px;font-weight:600;line-height:1.65;color:#6e5558;margin:12px 0 6px}
+.hmall-uploader input:not([type=hidden]){display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;min-height:44px;border:1px solid #dccab7;border-radius:9px;background:#fffdf8;color:#59494c;padding:9px 10px;font:inherit;font-size:14px;line-height:1.65}
+.hmall-uploader input[type=file]{font-size:12px;overflow:hidden;padding:9px 7px}
+.hmall-uploader input[type=file]::file-selector-button{max-width:100%;border:1px solid #dcc5a7;background:#faf0df;border-radius:6px;color:#76596a;padding:6px 9px;font:inherit;cursor:pointer;margin-right:7px}
+.hmall-uploader input:focus-visible,.hmall-uploader button:focus-visible{outline:2px solid #b28b57;outline-offset:3px}
+.hmall-upload-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hmall-uploader .hmall-upload-actions .btn{font-size:13px;min-height:42px;padding:9px 13px;white-space:normal;text-align:center;box-sizing:border-box}
+.hmall-uploader button:disabled,.hmall-uploader input:disabled{opacity:.62;cursor:wait}
+.hmall-material-list{margin-top:15px;display:grid;gap:11px}
+.hmall-file{min-width:0;box-sizing:border-box;border-top:1px solid #e8d7bf;padding-top:13px}
+.hmall-file strong{display:block;font-size:14px;line-height:1.7;color:#745267;font-weight:600;overflow-wrap:anywhere;word-break:break-word}
+.hmall-file small{display:block;font-size:12px;line-height:1.8;color:#8c776a;margin:4px 0 10px;overflow-wrap:anywhere;word-break:break-word}
+.hmall-file .btn{display:inline-flex;max-width:100%;font-size:13px;min-height:40px;padding:8px 12px;white-space:normal;box-sizing:border-box}
+@media(max-width:760px){.hmall-upload-panel{padding:14px 12px}.hmall-uploader input:not([type=hidden]){font-size:16px}.hmall-uploader input[type=file]{font-size:13px}.hmall-upload-toggle{font-size:13px;min-height:44px}.hmall-upload-close,.hmall-upload-logout{min-height:44px}.hmall-uploader .hmall-upload-actions .btn,.hmall-file .btn{min-height:44px}}
+@media print{.hmall-uploader{display:none!important}}
