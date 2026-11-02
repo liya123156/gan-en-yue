@@ -159,3 +159,70 @@ body{background:radial-gradient(ellipse at 92% 3%,#ffeccf66 0,transparent 28%),r
 }
 @media(max-width:374px){.sales-body .letter-hero{padding:19px 18px 15px}.sales-body .letter-hero h1{font-size:25px}.tool-launcher-heading h2{font-size:16px}.sales-body .tool-launcher .quick-card{padding:12px 11px;min-height:124px}.sales-body .tool-launcher .quick-card p{font-size:12px}.mobile-companion{padding:9px 10px}}
 @media print{.letter-hero .hero-guide,.mobile-companion,.welcome-letter-more>summary,.tool-launcher{display:none!important}.letter-hero .letter-rest{display:block!important}.sales-body .letter-hero{padding:22px;background:#fffcf6;box-shadow:none}.sales-body .letter-hero h1{font-size:27px}.letter-hero .letter-intro,.letter-hero .letter-rest{font-size:12px;line-height:1.85}.usage-guide,.guide-disclosure{break-inside:auto}.usage-guide .sales-aim-grid,.guide-disclosure>*{display:block!important}.guide-disclosure>summary,.usage-guide>summary:after{display:none!important}}
+
+/* Partner letter: salutation, indented paragraphs, signature and date. */
+.letter-hero h1:focus{outline:none}.letter-tools-next{margin:18px 0 6px}.letter-tools-next .btn{min-height:44px}
+.letter-hero .letter-intro p,.letter-hero .letter-rest p:not(.letter-signature):not(.letter-date){text-indent:2em}
+.letter-hero .letter-rest .letter-signature,.letter-hero .letter-rest .letter-date{text-indent:0;text-align:right}
+.letter-hero .letter-rest .letter-date{font-size:13px;line-height:1.8;color:#8b7567;margin:3px 0 0}
+@media(max-width:760px){.letter-hero .letter-rest .letter-date{font-size:12px}.letter-hero .letter-intro p,.letter-hero .letter-rest p:not(.letter-signature):not(.letter-date){text-indent:1.8em}}
+
+/* A letter to open: a quiet paper envelope before the shared toolkit. */
+body.letter-arrival{overflow:hidden}
+body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.site-footer,body.letter-arrival>#mobile-nav{visibility:hidden}
+.letter-entry[hidden]{display:none!important}
+.letter-entry{position:fixed;inset:0;z-index:2500;display:flex;overflow-y:auto;overscroll-behavior:contain;isolation:isolate;padding:max(26px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));background:radial-gradient(ellipse at 83% 10%,#ffedbd80,transparent 46%),radial-gradient(ellipse at 12% 90%,#efdbdc6e,transparent 47%),linear-gradient(145deg,#fffdf8,#fbf3e7 70%,#fff8ed);color:#4f3c43;transition:opacity .32s ease .32s,transform .6s ease;transform-origin:50% 45%;-webkit-overflow-scrolling:touch}
+.letter-entry:before{content:"";position:fixed;inset:16px;border:1px solid #bc96502c;border-radius:22px;pointer-events:none;z-index:-1}
+.letter-entry-inner{width:min(100%,640px);margin:auto;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.entry-brand{font-family:Georgia,"Songti SC",STSong,SimSun,serif;font-size:26px;color:#a68045;letter-spacing:2.8px;line-height:1.5;margin:0 0 18px;font-weight:500}
+.entry-brand span{display:inline-block;vertical-align:middle;font-family:"Songti SC",STSong,SimSun,serif;font-size:16px;letter-spacing:1px}
+.entry-kicker{font-size:10px;line-height:1.8;letter-spacing:1.8px;color:#a58358;margin:0 0 13px}
+.letter-entry h1{font-family:"Songti SC",STSong,SimSun,serif;font-size:30px;line-height:1.55;font-weight:500;letter-spacing:.04em;color:#704b61;margin:0 0 9px;max-width:100%;text-wrap:balance}
+.entry-intro{font-size:14px;line-height:1.8;color:#8a7468;margin:0 0 23px}
+.envelope-open{display:block;position:relative;width:min(100%,400px);padding:0;border:0;background:transparent;color:inherit;perspective:1000px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.envelope-art{display:block;position:relative;width:100%;aspect-ratio:1.62;isolation:isolate;filter:drop-shadow(0 20px 24px #8f633c24);transform:translateZ(0);transition:transform .25s ease}
+.envelope-back{position:absolute;inset:0;border:1px solid #d9bd8d;border-radius:10px;background:linear-gradient(135deg,#ead6b6,#f6e6cd 53%,#e6ccaa);z-index:1}
+.envelope-note{position:absolute;z-index:2;left:8%;right:8%;top:6%;height:86%;padding:21px 15px 16px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:10px;border:1px solid #e5d5b9;border-radius:4px;background:repeating-linear-gradient(0deg,#fffdf700 0 28px,#c3a17518 28px 29px),linear-gradient(135deg,#fffefb,#fff9ef);box-shadow:0 2px 10px #80634910;transition:transform .42s cubic-bezier(.22,.61,.36,1) .07s}
+.envelope-note:before{content:"LANDZ";display:block;font:13px Georgia,serif;letter-spacing:2.3px;color:#b59054;margin-bottom:3px}
+.envelope-note small{font-size:11px;line-height:1.7;color:#a08469;letter-spacing:.09em}
+.envelope-note strong{font-family:"Songti SC",STSong,SimSun,serif;font-size:20px;font-weight:500;line-height:1.7;color:#7e5869;letter-spacing:.04em}
+.envelope-front{position:absolute;z-index:4;inset:0;border-radius:9px;background:linear-gradient(28deg,#ebd4b3 0,#f7e5cb 49%,#e6cba7 50%,#f0ddc1 100%);clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%);box-shadow:inset 0 -1px 0 #b7955f44}
+.envelope-front:before{content:"";position:absolute;inset:0;background:linear-gradient(148deg,transparent 49.7%,#c2a17365 50%,transparent 50.3%),linear-gradient(212deg,transparent 49.7%,#c2a17355 50%,transparent 50.3%);opacity:.6}
+.envelope-front:after{content:"NOVEMBER 2026";position:absolute;right:6%;bottom:10%;width:84px;height:38px;display:grid;place-items:center;border:1px dashed #ac85585c;border-radius:50%;transform:rotate(-13deg);font:8px Georgia,serif;letter-spacing:.9px;color:#a48764}
+.envelope-flap{position:absolute;z-index:5;inset:0;border-radius:9px 9px 0 0;background:linear-gradient(145deg,#fff3dc,#efdbbb 80%);clip-path:polygon(0 0,100% 0,50% 54%);transform-origin:50% 0;transform:rotateX(0deg);backface-visibility:hidden;transition:transform .38s ease,z-index 0s .19s;box-shadow:inset 0 1px 0 #fff8e9}
+.envelope-seal{position:absolute;z-index:6;left:50%;top:51%;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid #f0dab6;outline:1px solid #af874ba6;outline-offset:3px;background:radial-gradient(circle at 34% 28%,#d5b67b,#af8349 70%,#a97d44);color:#fff5df;font:italic 24px Georgia,serif;box-shadow:0 3px 8px #88613833,inset 0 0 0 4px #e4c48c55;transform:translate(-50%,-50%);transition:opacity .15s ease,transform .22s ease}
+.envelope-address{display:block;font-family:"Songti SC",STSong,SimSun,serif;font-size:14px;line-height:1.8;letter-spacing:.14em;color:#8c6a56;margin:17px 0 0}
+.entry-open-label{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:48px;max-width:100%;padding:11px 29px;margin:20px 0 0;border:1px solid #84556c;border-radius:28px;background:#87566e;color:#fffaf4;box-shadow:0 6px 18px #82506915;font-size:14px;font-weight:600;line-height:1.7;letter-spacing:.08em;cursor:pointer}
+.entry-open-label span{font-size:16px;font-weight:400}
+.entry-footnote{font-size:11px;line-height:1.8;letter-spacing:.05em;color:#9e8775;margin:16px 0 0}
+.entry-skip{border:0;background:transparent;min-height:44px;max-width:100%;padding:9px 12px;margin:3px 0 0;color:#947c6d;font-size:12px;line-height:1.8;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.envelope-open:focus-visible,.entry-open-label:focus-visible,.entry-skip:focus-visible{outline:3px solid #c7a168;outline-offset:8px;border-radius:10px}
+.envelope-open:hover .envelope-art{transform:translateY(-3px)}
+.entry-open-label:hover{background:#7c4e64}
+.letter-entry.is-opening{opacity:0;transform:scale(1.025);pointer-events:none}
+.letter-entry.is-opening .envelope-flap{transform:rotateX(-180deg);z-index:1}
+.letter-entry.is-opening .envelope-note{transform:translateY(-38%)}
+.letter-entry.is-opening .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+@media(max-width:760px){
+ .letter-entry{padding:max(24px,env(safe-area-inset-top)) max(23px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(23px,env(safe-area-inset-left))}
+ .letter-entry:before{inset:11px;border-radius:18px}
+ .entry-brand{font-size:25px;margin-bottom:15px;letter-spacing:2.4px}
+ .entry-kicker{font-size:9px;letter-spacing:1.1px;margin-bottom:11px}
+ .letter-entry h1{font-size:25px;line-height:1.55;letter-spacing:.02em;margin-bottom:8px;max-width:340px}
+ .entry-intro{font-size:13px;margin-bottom:21px}
+ .envelope-open{width:min(100%,350px)}
+ .envelope-note{gap:7px;padding:17px 10px 12px}
+ .envelope-note:before{font-size:11px;margin-bottom:1px}
+ .envelope-note small{font-size:10px}
+ .envelope-note strong{font-size:17px}
+ .envelope-seal{width:42px;height:42px;font-size:21px}
+ .envelope-front:after{font-size:7px;width:72px;height:33px}
+ .envelope-address{font-size:13px;letter-spacing:.1em;margin-top:15px}
+ .entry-open-label{font-size:14px;min-height:47px;margin-top:17px;padding:10px 26px}
+ .entry-footnote{font-size:10px;margin-top:14px}
+ .entry-skip{font-size:12px;margin-top:1px}
+}
+@media(max-width:374px){.letter-entry{padding-left:20px;padding-right:20px}.letter-entry h1{font-size:24px}.entry-brand{font-size:23px}.entry-kicker{font-size:8px;letter-spacing:1px}.envelope-note strong{font-size:16px}.envelope-address{font-size:12px}}
+@media(max-height:700px){.letter-entry{padding-top:18px;padding-bottom:14px}.entry-brand{margin-bottom:9px}.entry-kicker{margin-bottom:7px}.entry-intro{margin-bottom:14px}.envelope-open{max-width:310px}.entry-open-label{margin-top:13px}.entry-footnote{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.letter-entry,.envelope-art,.envelope-flap,.envelope-note,.envelope-seal{transition:none!important}.letter-entry.is-opening{transform:none}.letter-entry.is-opening .envelope-note{transform:none}.envelope-open:hover .envelope-art{transform:none}}
+@media print{.letter-entry{display:none!important}body.letter-arrival>.site-header,body.letter-arrival>#app,body.letter-arrival>.site-footer,body.letter-arrival>#mobile-nav{visibility:visible}}

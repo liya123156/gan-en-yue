@@ -2,7 +2,7 @@
 (() => {
   const app = document.getElementById('app');
   const mobileNav = document.getElementById('mobile-nav');
-  const PARTNER_INVITATION = "💌 致销售中心全体伙伴的一封信\n\n亲爱的伙伴：\n\n谢谢你，把认真与用心，放进一次次顾客服务里。\n\n耐心听完一份顾虑，仔细核实一条信息，把答应的事情继续跟进。你为顾客多想的每一步，都有价值。\n\n这个11月，让我们也主动向每一位业主和客户表达感谢。听听他最近的打算，了解需求的新变化，再准备适合他的表达与服务，让信任得到认真回应。\n\n我们把贺卡、感谢文案、伴手礼参考和专业资料入口，整理成了「丽兹行·感恩连接行动包」，希望为你的下一次联系、一次面见，多添一份准备与心意。\n\n📲 长按识别下方二维码，就能打开这份支持。\n\n愿我们把感谢说出来，把顾客在意的事做好，让温暖在每一天的服务里延续。\n\n感恩月项目组";
+  const PARTNER_INVITATION = "💌 致销售中心全体伙伴的一封信\n\n亲爱的伙伴：\n\n🍂 十一月，是丽兹行一年一度的感恩月。\n\n从国王与天使的彼此关怀，到爱心义卖的共同参与，我们把“感恩利他”放进具体的行动里，也珍惜每一位顾客的选择与托付。\n\n💜 也想借这个月，先对用心服务的你，说一声谢谢。\n\n耐心听完一份顾虑，仔细核实一条信息，把答应的事情继续跟进。你为顾客多想的每一步，都有价值。\n\n这个11月，让我们也主动向每一位业主和客户表达感谢。听听他最近的打算，了解需求的新变化，再准备适合他的表达与服务，让信任得到认真回应。\n\n我们把贺卡、感谢文案、伴手礼参考和专业资料入口，整理成了「丽兹行·感恩连接行动包」，希望为你的下一次联系、一次面见，多添一份准备与心意。\n\n📲 长按识别下方二维码，就能打开这份支持。\n\n愿我们把感谢说出来，把顾客在意的事做好，让温暖在每一天的服务里延续。\n\n感恩月项目组\n2026年11月";
   const icons = {cards:'✧', messages:'≋', gifts:'♧', professional:'↧'};
   const fieldNames = {
     title:'内容',text:'具体内容',action:'具体行动',detail:'执行说明',responsibility:'负责什么',outputs:'交付内容',boundary:'职责边界',
@@ -87,7 +87,7 @@
     const directoryLinks=sections.map(([id,no,title])=>`<a href="#${id}" data-section-link><span>${no}</span><b>${title}</b></a>`).join('')+`<a href="#support" data-section-link class="directory-extra"><span>＋</span><b>补充资料与费用支持</b></a>`;
     const directory=`<aside class="sales-directory" aria-label="行动包目录"><div class="directory-title"><span>LANDZ SERVICE TOOLKIT</span><h2>感恩连接<br>行动物料包</h2><p>面向销售中心的顾客服务工具<br>选择内容，编辑后即可取用。</p></div><nav class="directory-links" aria-label="功能目录">${directoryLinks}</nav><a class="directory-qr" href="qr.html">分享行动包二维码 <span aria-hidden="true">↗</span></a></aside>`;
     const phoneDirectory=`<details class="phone-directory"><summary><span>更多内容</span><b>行动说明 · 案例 · 支持</b></summary><nav class="directory-links" aria-label="手机补充内容目录"><a href="#consensus" data-section-link><span>01</span><b>行动说明与目标</b></a><a href="#together" data-section-link><span>06</span><b>行动与案例分享</b></a><a href="#support" data-section-link><span>＋</span><b>补充资料与费用支持</b></a></nav></details>`;
-    const hero=`<section class="hero letter-hero" id="start"><div class="hero-layout"><div class="hero-content"><p class="eyebrow">NOVEMBER 2026 · 感恩相连，服务有光</p><p class="hero-tool-name">丽兹行 · 感恩连接行动包</p><h1>致销售中心<br><em>全体伙伴的一封信</em></h1><p class="letter-salutation">亲爱的伙伴：</p><div class="letter-intro"><p>这个11月，想先对认真服务的你，说一声谢谢。</p><p>每一次耐心倾听、每一份仔细准备、每一项持续跟进，都有你的用心。你为顾客多想的一步，值得被看见，也值得被珍惜。</p></div><details class="welcome-letter-more" ${window.matchMedia('(min-width: 761px)').matches?'open':''}><summary>读完这封信</summary><div class="letter-rest"><p>顾客给予我们的选择与托付，同样值得认真回应。让我们主动听听每一位业主和客户最近的打算，关心需求有哪些变化，再把真诚的感谢和合适的服务送到他身边。</p><p>我们也为你准备了这份感恩连接行动包。贺卡、表达文案、伴手礼参考和专业资料入口，希望能让你的下一次联系、一次面见，多一份从容与心意。</p><p>愿这份支持陪着你，把感谢说具体，把顾客在意的事做好，让温暖在每一天的服务里延续。</p><p class="letter-signature">感恩月项目组</p><div class="letter-share"><button class="btn" type="button" data-copy-invitation>复制微信转发文案</button><a href="qr.html" class="btn">行动包二维码</a></div></div></details></div><aside class="hero-guide" aria-label="兰斯博士的使用提示"><div class="ip-portrait"><img src="media/dr-lans.webp" alt="兰斯博士：丽兹行AI服务伙伴" width="1254" height="1254" fetchpriority="high"></div><div class="ip-speech"><span>兰斯博士 · 陪你一起行动</span><p>先听懂顾客的需要，<br>再准备合适的感谢与服务。</p><small>这一次，也把心里的感谢说出来。</small></div></aside></div></section>`;
+    const hero=`<section class="hero letter-hero" id="start"><div class="hero-layout"><div class="hero-content"><p class="eyebrow">NOVEMBER 2026 · 感恩相连，服务有光</p><p class="hero-tool-name">丽兹行 · 感恩连接行动包</p><h1>致销售中心<br><em>全体伙伴的一封信</em></h1><p class="letter-salutation">亲爱的伙伴：</p><div class="letter-intro"><p>🍂 十一月，是丽兹行一年一度的感恩月。</p><p>从国王与天使的彼此关怀，到爱心义卖的共同参与，我们把“感恩利他”放进具体的行动里，也珍惜每一位顾客的选择与托付。</p><p>💜 也想借这个月，先对用心服务的你，说一声谢谢。</p></div><details class="welcome-letter-more" ${window.matchMedia('(min-width: 761px)').matches?'open':''}><summary>读完这封信</summary><div class="letter-rest"><p>每一次耐心倾听、每一份仔细准备、每一项持续跟进，都有你的用心。你为顾客多想的一步，值得被看见，也值得被珍惜。</p><p>顾客给予我们的选择与托付，同样值得认真回应。让我们主动听听每一位业主和客户最近的打算，关心需求有哪些变化，再把真诚的感谢和合适的服务送到他身边。</p><p>我们也为你准备了这份感恩连接行动包。贺卡、表达文案、伴手礼参考和专业资料入口，希望能让你的下一次联系、一次面见，多一份从容与心意。</p><p>愿这份支持陪着你，把感谢说具体，把顾客在意的事做好，让温暖在每一天的服务里延续。</p><p class="letter-signature">感恩月项目组</p><p class="letter-date">2026年11月</p><div class="letter-tools-next"><a class="btn primary" href="#tools">收好这封信，打开行动包</a></div><div class="letter-share"><button class="btn" type="button" data-copy-invitation>复制微信转发文案</button><a href="qr.html" class="btn">行动包二维码</a><button type="button" class="btn" data-reopen-letter>再开启这封信</button></div></div></details></div><aside class="hero-guide" aria-label="兰斯博士的使用提示"><div class="ip-portrait"><img src="media/dr-lans.webp" alt="兰斯博士：丽兹行AI服务伙伴" width="1254" height="1254" fetchpriority="high"></div><div class="ip-speech"><span>兰斯博士 · 陪你一起行动</span><p>先听懂顾客的需要，<br>再准备合适的感谢与服务。</p><small>这一次，也把心里的感谢说出来。</small></div></aside></div></section>`;
     const aim=`<details class="sales-aim usage-guide" id="how-to"><summary><span>怎样开始下一次行动？</span><small>三步使用说明</small></summary><div class="sales-aim-grid"><article><b>01</b><h3>先了解，现在需要什么</h3><p>回顾服务经历，主动听听顾客最近的打算和变化，确认当下关心的问题。</p></article><article><b>02</b><h3>选内容，写下真实感谢</h3><p>按顾客关系与服务阶段，选择贺卡和文案，补充你们之间真实的经历与细节。</p></article><article><b>03</b><h3>配服务，把约定做到</h3><p>准备有用的专业资料或适宜的心意，主动联系、面见，并把后续服务逐项跟进。</p></article></div></details>`;
     const shortcuts=[{id:'cards',title:'贺卡定制',description:'5种风格，定制后保存'},{id:'messages',title:'感谢文案',description:'18个场景，按需选用'},{id:'gifts',title:'伴手礼参考',description:'按预算挑选得体心意'},{id:'professional',title:'专业资料',description:'准备顾客所需的内容'}];
     const quick=`<section class="tool-launcher" id="tools" aria-labelledby="tool-launcher-title"><div class="tool-launcher-heading"><h2 id="tool-launcher-title">为你的下一次服务，多准备一步。</h2><p>选择需要的内容，加入你的心意，准备下一次联系。</p></div><div class="quick-grid">${shortcuts.map((q,i)=>`<a class="quick-card" href="#${esc(q.id)}"><div class="quick-top"><span class="quick-icon">${icons[q.id]||'✧'}</span><span class="quick-number">0${i+2}</span></div><h3>${esc(q.title)}</h3><p>${esc(q.description)}</p><span class="arrow" aria-hidden="true">↗</span></a>`).join('')}</div></section><aside class="mobile-companion" aria-label="兰斯博士的小提示"><img src="media/dr-lans.webp" alt="" width="56" height="56" loading="lazy"><div><strong>兰斯博士 · 陪你一起行动</strong><p>先听听顾客最近的打算，再准备感谢与服务。</p></div></aside>`;
@@ -192,6 +192,7 @@
       if(button.dataset.messageFilter!=null){messageFilter=button.dataset.messageFilter;renderMessages();return;}
       if(button.dataset.giftFilter!=null){giftFilter=button.dataset.giftFilter;renderGifts();return;}
       if(button.dataset.copyMessage){const m=arr(data.action?.messages).find(x=>x.id===button.dataset.copyMessage);if(m)copy(m.text);return;}
+      if(button.hasAttribute('data-reopen-letter')){reopenPartnerLetter();return;}
       if(button.hasAttribute('data-copy-invitation')){copy(PARTNER_INVITATION,'来信已复制，可与行动包二维码一起转发');return;}
       if(button.hasAttribute('data-copy-transaction')){copy(document.getElementById('transaction-editor').value);return;}
       if(button.hasAttribute('data-download-transaction')){downloadText(document.getElementById('transaction-editor').value,'我的成交信息服务表达.txt');return;}
@@ -203,14 +204,65 @@
     if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){const id=entry.target.id==='consensus'?'start':entry.target.id;document.querySelectorAll('[data-section-link],#mobile-nav a').forEach(link=>link.classList.toggle('active',link.hash==='#'+id));}}},{rootMargin:'-10% 0px -65% 0px'});document.querySelectorAll('.section,#start').forEach(section=>observer.observe(section));}
     if(location.hash)requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target){if(target.id==='consensus'){const details=target.querySelector('.guide-disclosure');if(details)details.open=true;}target.scrollIntoView();}});
   }
+  const letterEntryKey='landz-partner-letter-opened-2026-11';
+  let entryOpening=false,entryTimer;
+  function setEntryVisible(visible) {
+    const entry=document.getElementById('letter-entry');if(!entry)return;
+    entry.hidden=!visible;entry.setAttribute('aria-busy','false');
+    document.body.classList.toggle('letter-arrival',visible);
+    ['.site-header','#app','.site-footer','#mobile-nav'].forEach(selector=>{const element=document.querySelector(selector);if(element)element.inert=visible;});
+  }
+  function rememberLetterOpening(){try{sessionStorage.setItem(letterEntryKey,'1');}catch(_){}}
+  function enterPartnerLetter(showLetter=true) {
+    if(entryOpening)return;
+    const entry=document.getElementById('letter-entry');if(!entry)return;
+    entryOpening=true;entry.setAttribute('aria-busy','true');
+    entry.querySelectorAll('button').forEach(button=>button.disabled=true);
+    if(showLetter)entry.classList.add('is-opening');
+    const duration=showLetter&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches?760:0;
+    entryTimer=setTimeout(()=>{
+      setEntryVisible(false);rememberLetterOpening();entryOpening=false;entry.classList.remove('is-opening');
+      entry.querySelectorAll('button').forEach(button=>button.disabled=false);
+      const letter=document.querySelector('.welcome-letter-more');if(showLetter&&letter)letter.open=true;
+      const target=document.querySelector(showLetter?'#start h1':'#tool-launcher-title');
+      if(target){target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({behavior:'instant',block:'start'});}
+    },duration);
+  }
+  function reopenPartnerLetter() {
+    const entry=document.getElementById('letter-entry');if(!entry)return;
+    clearTimeout(entryTimer);entryOpening=false;entry.classList.remove('is-opening');
+    entry.querySelectorAll('button').forEach(button=>button.disabled=false);
+    setEntryVisible(true);document.getElementById('open-partner-letter').focus({preventScroll:true});
+  }
+  function initLetterEntry() {
+    const entry=document.getElementById('letter-entry');if(!entry)return;
+    let seen=false;try{seen=sessionStorage.getItem(letterEntryKey)==='1';}catch(_){}
+    const directTool=!!location.hash&&location.hash!=='#start';
+    entry.querySelectorAll('button').forEach(button=>button.disabled=false);
+    document.getElementById('entry-open-text').textContent='开启这封信';
+    document.getElementById('open-partner-letter').addEventListener('click',()=>enterPartnerLetter(true));
+    entry.querySelector('[data-open-letter]').addEventListener('click',()=>enterPartnerLetter(true));
+    document.getElementById('skip-letter-entry').addEventListener('click',()=>enterPartnerLetter(false));
+    entry.addEventListener('keydown',event=>{
+      if(entry.hidden||entryOpening)return;
+      if(event.key==='Escape'){event.preventDefault();enterPartnerLetter(false);return;}
+      if(event.key!=='Tab')return;
+      const buttons=[...entry.querySelectorAll('button:not([disabled])')],first=buttons[0],last=buttons[buttons.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    });
+    setEntryVisible(!seen&&!directTool);
+    if(!seen&&!directTool)document.getElementById('open-partner-letter').focus({preventScroll:true});
+  }
+
   async function init() {
     try {
       data=window.GRATITUDE_CONTENT;
       if(!data){const response=await fetch('content.json');if(!response.ok)throw new Error('missing content');data=await response.json();}
       if(!data.action)throw new Error('invalid content');
       const current=new URL(location.href);if(current.searchParams.has('view')){current.searchParams.delete('view');history.replaceState(history.state,'',current.pathname+current.search+current.hash);}
-      renderAction();attach();
-    }catch(error){console.error(error);app.innerHTML='<div class="error-state"><h1>内容暂未载入</h1><p>请刷新后再试。离线打开时，请保持完整交付包的页面、内容和组件文件位于同一目录。</p><a class="btn" href="?view=action">重新打开行动包</a></div>';}
+      renderAction();attach();initLetterEntry();
+    }catch(error){setEntryVisible(false);console.error(error);app.innerHTML='<div class="error-state"><h1>内容暂未载入</h1><p>请刷新后再试。离线打开时，请保持完整交付包的页面、内容和组件文件位于同一目录。</p><a class="btn" href="?view=action">重新打开行动包</a></div>';}
   }
   init();
 })();

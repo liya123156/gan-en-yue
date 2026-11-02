@@ -6,11 +6,26 @@
   <meta name="theme-color" content="#fff8ee">
   <meta name="description" content="丽兹行11月感恩连接行动包。制作专属贺卡、选用表达文案、挑选伴手礼、下载专业资料，让每一份感谢落到真实服务。">
   <title>丽兹行感恩连接行动包｜贺卡・文案・服务资料</title>
-  <link rel="stylesheet" href="style.css?v=20261102-letter-mobile-v1">
-  <link rel="stylesheet" href="card-maker.css?v=20261102-letter-mobile-v1">
+  <link rel="stylesheet" href="style.css?v=20261102-envelope-v3">
+  <link rel="stylesheet" href="card-maker.css?v=20261102-envelope-v3">
 </head>
-<body>
+<body class="letter-arrival">
   <div class="site-grain" aria-hidden="true"></div>
+  <section id="letter-entry" class="letter-entry" role="dialog" aria-modal="true" aria-labelledby="letter-entry-title" aria-busy="true">
+    <div class="letter-entry-inner">
+      <div class="entry-brand"><span>LANDZ</span><b>丽兹行</b></div>
+      <p class="entry-kicker">2026 NOVEMBER · 感恩相连，服务有光</p>
+      <h1 id="letter-entry-title">有一封信，<br>想交给用心的你。</h1>
+      <p class="entry-intro">写给销售中心的每一位伙伴</p>
+      <button id="open-partner-letter" class="envelope-open" type="button" aria-label="开启写给伙伴的信" disabled>
+        <span class="envelope-art" aria-hidden="true"><span class="envelope-back"></span><span class="envelope-note"><small>致销售中心全体伙伴</small><strong>谢谢你的每一份用心</strong></span><span class="envelope-flap"></span><span class="envelope-front"></span><span class="envelope-seal">L</span></span>
+        <span class="envelope-address">销售中心全体伙伴 亲启</span>
+      </button>
+      <button class="entry-open-label" type="button" data-open-letter disabled><span id="entry-open-text">正在准备这封信…</span><span aria-hidden="true">↓</span></button>
+      <p class="entry-footnote">来自感恩月项目组 · 2026年11月</p>
+      <button id="skip-letter-entry" class="entry-skip" type="button" disabled>直接取用行动物料</button>
+    </div>
+  </section>
   <header class="site-header">
     <a class="brand" href="./" aria-label="丽兹行感恩连接行动包首页"><span class="brand-mark">LANDZ</span><span class="brand-chinese">丽兹行<span>感恩连接行动包</span></span></a>
     <div class="header-right"><span class="month-label">NOVEMBER · 2026</span></div>
@@ -19,11 +34,11 @@
   <footer class="site-footer"><span>LANDZ · 丽兹行</span><p>让感谢被听见，让服务被感受到。</p><div><a href="#start">回到伙伴来信</a><a href="qr.html">行动包二维码</a><a href="admin.html" class="footer-admin">物料管理 ↗</a></div></footer>
   <nav id="mobile-nav" class="mobile-nav" aria-label="行动快捷导航"></nav>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="backend-config.js?v=20261102-letter-mobile-v1"></script>
-  <script src="supabase-adapter.js?v=20261102-letter-mobile-v1"></script>
-  <script src="assets.js?v=20261102-letter-mobile-v1"></script>
-  <script src="content-data.js?v=20261102-letter-mobile-v1"></script>
-  <script src="card-maker.js?v=20261102-letter-mobile-v1"></script>
-  <script src="app.js?v=20261102-letter-mobile-v1"></script>
+  <script src="backend-config.js?v=20261102-envelope-v3"></script>
+  <script src="supabase-adapter.js?v=20261102-envelope-v3"></script>
+  <script src="assets.js?v=20261102-envelope-v3"></script>
+  <script src="content-data.js?v=20261102-envelope-v3"></script>
+  <script src="card-maker.js?v=20261102-envelope-v3"></script>
+  <script src="app.js?v=20261102-envelope-v3"></script>
 </body>
 </html>
