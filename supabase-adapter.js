@@ -4,6 +4,19 @@
  if(!cfg||cfg.provider!=='supabase'||!cfg.publishableKey)return;
  const origin=String(cfg.url).replace(/\/$/,''),bucket=cfg.bucket||'gratitude-materials',nativeFetch=window.fetch.bind(window);
  const SESSION_KEY='landz-gratitude-pin-session';
+ const FEEDBACK_KEY='landz-gratitude-feedback-owner-v1';
+ function feedbackKey(){
+  try{
+   let key=localStorage.getItem(FEEDBACK_KEY);
+   if(!/^[0-9a-f]{64}$/.test(key||'')){
+    const bytes=new Uint8Array(32);crypto.getRandomValues(bytes);
+    key=Array.from(bytes,byte=>byte.toString(16).padStart(2,'0')).join('');
+    localStorage.setItem(FEEDBACK_KEY,key);
+   }
+   if(localStorage.getItem(FEEDBACK_KEY)!==key)throw Error('storage');
+   return key;
+  }catch{throw Error('当前浏览器无法保存个人留言身份，请允许网站保存数据后重试');}
+ }
  let session=null;
  try{sessionStorage.removeItem('landz-gratitude-admin-session');session=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');}catch{}
  const result=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
@@ -15,6 +28,21 @@
   if(u.origin!==location.origin||!u.pathname.startsWith('/api/'))return nativeFetch(input,options);
   const p=u.pathname,method=(options.method||'GET').toUpperCase();
   try{
+   if(p==='/api/feedback'||p==='/api/admin/feedback'){
+    const admin=p==='/api/admin/feedback';
+    if((admin&&method!=='GET')||(!admin&&!['GET','POST'].includes(method)))return result({error:'接口不存在'},404);
+    const offset=u.searchParams.get('offset')||'0';
+    if(!/^\d{1,5}$/.test(offset)||Number(offset)>10000)return result({error:'分页参数有误'},400);
+    let owner;
+    if(!admin){try{owner=feedbackKey();}catch(error){return result({error:error.message},503);}}
+    const response=await nativeFetch(origin+'/functions/v1/gratitude-feedback'+(admin?'/admin':'')+'?offset='+offset,{
+     ...options,method,cache:'no-store',headers:{...(options.headers||{}),apikey:cfg.publishableKey,
+      ...(admin?(session?.token?{'X-Admin-Session':session.token}:{}):{'X-Feedback-Key':owner})}
+    });
+    const body=await read(response);
+    if(admin&&response.status===401)saveSession(null);
+    return result(body,response.status);
+   }
    if(p==='/api/materials'&&method==='GET'){
     const response=await nativeFetch(origin+'/rest/v1/gratitude_materials?select=*&active=eq.true&order=updated_at.desc',{headers:{apikey:cfg.publishableKey}});
     const body=await read(response);if(!response.ok)return result({error:body.message||body.error||'资料暂时无法读取'},response.status);

@@ -1,0 +1,44 @@
+/* Private suggestions, available to their author and project administrators. */
+.private-feedback{max-width:100%;min-width:0;box-sizing:border-box;color:#6a5759}
+.private-feedback [hidden]{display:none!important}
+.pf-intro,.pf-form,.pf-history{min-width:0;max-width:100%;box-sizing:border-box}
+.pf-intro h3,.pf-history h3{color:#79556c;font-size:19px;line-height:1.65;margin:0;font-weight:650}
+.pf-intro>p{font-size:15px;line-height:1.9;margin:11px 0;color:#887268;overflow-wrap:anywhere}
+.pf-intro .pf-privacy{font-size:13px;line-height:1.8;color:#7a606c;margin:12px 0 0;display:flex;gap:8px;align-items:flex-start}
+.pf-privacy:before{content:'◌';font-size:15px;color:#aa8752;flex:none}
+.pf-form{background:#fffdf8;border:1px solid #e4d2bb;border-radius:18px;padding:25px;margin-top:22px}
+.pf-fields{display:grid;grid-template-columns:minmax(140px,.65fr) minmax(180px,1.35fr);gap:18px}
+.pf-field{min-width:0;margin-bottom:18px}
+.private-feedback label{display:block;margin:0 0 8px;font-size:14px;font-weight:650;line-height:1.6;color:#725565}
+.private-feedback input,.private-feedback select,.private-feedback textarea{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;font:inherit;font-size:15px;line-height:1.7;color:#5d4c51;border:1px solid #dccaaf;border-radius:11px;background:#fffefb;padding:12px 13px;min-height:48px}
+.private-feedback select{padding-right:30px}
+.private-feedback textarea{min-height:158px;resize:vertical}
+.private-feedback ::placeholder{color:#a38f81;opacity:1}
+.pf-input-hint{display:flex;justify-content:space-between;gap:12px;color:#a08a7b;font-size:12px;line-height:1.7;margin-top:7px}
+.pf-input-hint>span:last-child{white-space:nowrap;flex-shrink:0}
+.pf-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.private-feedback .btn{box-sizing:border-box;max-width:100%;min-height:46px;font-size:14px;line-height:1.6;white-space:normal;cursor:pointer}
+.private-feedback .btn.primary{background:#805b74;border:1px solid #805b74;color:#fff9f5;padding:11px 22px;border-radius:11px}
+.pf-status,.pf-history-status{font-size:13px;line-height:1.85;color:#826677;margin:12px 0 0;overflow-wrap:anywhere;white-space:pre-wrap}
+.pf-status:empty,.pf-history-status:empty{display:none}
+.pf-status[data-state=error],.pf-history-status[data-state=error]{color:#ad5151}
+.pf-status[data-state=success]{color:#597858}
+.pf-storage-note{font-size:12px;line-height:1.8;margin:10px 0 0;color:#a08c7d;overflow-wrap:anywhere}
+.pf-history{margin-top:31px}
+.pf-history-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.pf-text-button{font:inherit;font-size:13px;line-height:1.65;flex:none;min-height:44px;padding:7px 0;border:0;background:transparent;color:#8a667c;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.pf-message-list{display:grid;gap:13px;margin-top:14px}
+.pf-message{min-width:0;background:#fffdf8;border:1px solid #e8d8c2;border-radius:14px;padding:18px 20px;box-sizing:border-box}
+.pf-message-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:7px 12px}
+.pf-category{color:#866077;background:#f5ecee;border:1px solid #eadbdd;border-radius:30px;padding:3px 10px;line-height:1.7;font-size:12px}
+.pf-message-time{font-size:12px;color:#a08a7b;line-height:1.7}
+.pf-message-author{font-size:13px;font-weight:600;color:#7b616a;line-height:1.75;margin:12px 0 0;overflow-wrap:anywhere;white-space:pre-wrap}
+.pf-message-body{font-size:14px;line-height:1.95;margin:10px 0 0;color:#6b5957;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.pf-muted{font-weight:400;color:#a38f81}
+.private-feedback .pf-more{margin-top:15px;background:#fffaf2;color:#805b74;border:1px solid #dcc4a4;padding:10px 18px;border-radius:10px}
+.pf-admin-note{color:#958075;font-size:13px;line-height:1.8;margin:9px 0}
+.pf-admin .pf-history{margin-top:0}
+.private-feedback :is(button,input,select,textarea):focus-visible{outline:2px solid #b28b57;outline-offset:3px}
+.private-feedback :is(button,input,select,textarea):disabled{opacity:.62;cursor:wait}
+@media(max-width:760px){.pf-form{padding:20px 16px}.pf-fields{grid-template-columns:minmax(0,1fr);gap:0}.private-feedback input,.private-feedback select,.private-feedback textarea{font-size:16px}.pf-intro h3,.pf-history h3{font-size:17px}.pf-intro>p{font-size:14px}.pf-intro .pf-privacy{font-size:12px}.pf-message{padding:16px}.pf-input-hint{font-size:11px}.private-feedback .btn.primary{width:100%}.pf-message-time{font-size:11px}.pf-history-head{align-items:center}}
+@media print{.pf-form,.pf-storage-note,.pf-text-button,.pf-more{display:none!important}}
