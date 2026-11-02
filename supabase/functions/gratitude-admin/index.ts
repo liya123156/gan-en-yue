@@ -5,11 +5,24 @@ const service=Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')||'';
 const headers={apikey:service,Authorization:'Bearer '+service,'Content-Type':'application/json'};
 const cors={'Access-Control-Allow-Origin':'https://liya123156.github.io','Access-Control-Allow-Headers':'apikey, content-type, x-admin-session','Access-Control-Allow-Methods':'GET, POST, PATCH, OPTIONS',Vary:'Origin'};
 const reply=(value:unknown,status=200)=>new Response(JSON.stringify(value),{status,headers:{...cors,'Content-Type':'application/json','Cache-Control':'no-store'}});
+// Match the declared upload cap through the Storage API, preserving the
+// existing public/read policy and allowed MIME types. Cache per Edge isolate.
+let bucketReadiness:Promise<void>|null=null;
+function ensureBucketLimit(){
+ if(!bucketReadiness)bucketReadiness=(async()=>{
+  const endpoint=base+'/storage/v1/bucket/'+BUCKET;
+  const current=await fetch(endpoint,{headers});if(!current.ok)throw Error('storage settings');
+  const bucket=await current.json();if(Number(bucket.file_size_limit)===41943040)return;
+  const configured=await fetch(endpoint,{method:'PUT',headers,body:JSON.stringify({public:bucket.public,file_size_limit:41943040,allowed_mime_types:bucket.allowed_mime_types??null})});
+  if(!configured.ok)throw Error('storage settings');
+ })().catch(error=>{bucketReadiness=null;throw error;});
+ return bucketReadiness;
+}
 async function rpc(name:string,body:unknown){const r=await fetch(base+'/rest/v1/rpc/'+name,{method:'POST',headers,body:JSON.stringify(body)});if(!r.ok)throw Error('管理服务暂时不可用');return r.json();}
 function material(row:any){return {id:row.id,title:row.title,category:row.category,fileName:row.file_name,size:row.size,mime:row.mime,source:row.source,date:row.document_date,active:row.active,updatedAt:row.updated_at,url:base+'/storage/v1/object/public/'+BUCKET+'/'+row.storage_path+'?download='+encodeURIComponent(row.file_name)};}
 Deno.serve(async req=>{
- if(req.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
  if(!base||!service)return reply({error:'管理服务尚未接通'},503);
+ if(req.method==='OPTIONS')return new Response(null,{status:204,headers:cors});
  const path=new URL(req.url).pathname.replace(/^.*\/gratitude-admin/,'')||'/';
  try{
   if(path==='/login'&&req.method==='POST'){
@@ -30,10 +43,11 @@ Deno.serve(async req=>{
   }
   if(path==='/materials'&&req.method==='POST'){
    const form=await req.formData(),file=form.get('file'),title=String(form.get('title')||'').trim(),category=String(form.get('category')||'other');
-   if(!(file instanceof File)||file.size<=0||file.size>20971520)return reply({error:'请选择20MB以内的非空文件'},400);
+   if(!(file instanceof File)||file.size<=0||file.size>41943040)return reply({error:'请选择40MB以内的非空文件'},400);
    const ext=file.name.split('.').pop()?.toLowerCase()||'';
    if(!Object.hasOwn(MIME,ext)||file.name.length>255)return reply({error:'文件格式暂不支持，请选择PDF、图片或办公文件'},400);
    if(!title||title.length>80||!['hmall','market','other'].includes(category))return reply({error:'请完善资料标题与分类'},400);
+   await ensureBucketLimit();
    const id=crypto.randomUUID(),storagePath=id+'.'+ext,mime=MIME[ext];
    const uploaded=await fetch(base+'/storage/v1/object/'+BUCKET+'/'+storagePath,{method:'POST',headers:{...headers,'Content-Type':mime,'x-upsert':'false'},body:file});
    if(!uploaded.ok)throw Error('文件上传未完成，请稍后重试');

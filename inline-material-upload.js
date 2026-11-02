@@ -1,7 +1,7 @@
 'use strict';
 (() => {
   let instanceNumber = 0;
-  const MAX_BYTES = 20 * 1024 * 1024;
+  const MAX_BYTES = 40 * 1024 * 1024;
   const ALLOWED_EXTENSIONS = new Set(['pdf', 'png', 'jpg', 'jpeg', 'webp']);
 
   function shanghaiDate() {
@@ -42,7 +42,7 @@
           <input id="${prefix}-date" name="date" type="date" required>
           <label for="${prefix}-file">选择本地文件</label>
           <input id="${prefix}-file" name="file" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/png,image/jpeg,image/webp" required>
-          <p class="hmall-upload-note">支持PDF和图片，单个文件不超过20MB<br>新版本发布后，伙伴将在这里下载最新hmall图</p>
+          <p class="hmall-upload-note">支持PDF和图片，单个文件不超过40MB<br>新版本发布后，伙伴将在这里下载最新hmall图</p>
           <div class="hmall-upload-actions"><button class="btn primary" type="submit">上传并发布</button><button class="hmall-upload-logout" type="button">退出管理</button></div>
         </form>
       </section>`;
@@ -162,7 +162,7 @@
       const file = fileInput.files?.[0];
       const extension = String(file?.name || '').split('.').pop().toLowerCase();
       if (!file || file.size <= 0) { message('请选择需要上传的非空文件', 'error'); fileInput.focus(); return; }
-      if (file.size > MAX_BYTES) { message('文件超过20MB，请选择20MB以内的版本', 'error'); return; }
+      if (file.size > MAX_BYTES) { message('文件超过40MB，请选择40MB以内的版本', 'error'); return; }
       if (!ALLOWED_EXTENSIONS.has(extension)) { message('请选择PDF、PNG、JPG或WebP文件', 'error'); return; }
       const materialTitle = title.value.trim();
       if (!materialTitle) { message('请填写资料标题', 'error'); title.focus(); return; }

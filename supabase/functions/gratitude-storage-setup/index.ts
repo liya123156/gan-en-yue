@@ -32,7 +32,7 @@ Deno.serve(async (req: Request) => {
     if (!Array.isArray(members) || members.length !== 1) return reply({error: '该账号没有物料维护权限'}, 403);
     const endpoint = base + '/storage/v1/bucket/' + BUCKET;
     const existing = await fetch(endpoint, {headers});
-    const config = {public: true, file_size_limit: 20971520, allowed_mime_types: MIME_TYPES};
+    const config = {public: true, file_size_limit: 41943040, allowed_mime_types: MIME_TYPES};
     let response: Response;
     if (existing.ok) {
       response = await fetch(endpoint, {method: 'PUT', headers, body: JSON.stringify(config)});

@@ -60,7 +60,7 @@ create table if not exists public.gratitude_materials (
   title text not null check (length(btrim(title)) between 1 and 80),
   category text not null check (category in ('hmall', 'market', 'other')),
   file_name text not null check (length(file_name) between 1 and 255),
-  size bigint not null check (size > 0 and size <= 20971520),
+  size bigint not null check (size > 0 and size <= 41943040),
   mime text not null,
   storage_path text not null unique check (
     storage_path ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.(pdf|png|jpg|jpeg|webp|xlsx|docx|pptx)$'
@@ -148,7 +148,7 @@ create policy "gratitude admin storage delete"
 -- insert into public.gratitude_admins(user_id) values ('VERIFIED_REAL_AUTH_UUID');
 --
 -- Storage API bucket settings (no credentials belong in this SQL/source):
--- id/name: gratitude-materials; public: true; file_size_limit: 20971520;
+-- id/name: gratitude-materials; public: true; file_size_limit: 41943040;
 -- allowed_mime_types: application/pdf, image/png, image/jpeg, image/webp,
 -- application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
 -- application/vnd.openxmlformats-officedocument.wordprocessingml.document,

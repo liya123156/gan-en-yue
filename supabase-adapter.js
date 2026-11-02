@@ -53,7 +53,7 @@
    const allowed=(route==='/session'&&method==='GET')||(route==='/login'&&method==='POST')||(route==='/logout'&&method==='POST')||(route==='/materials'&&['GET','POST'].includes(method))||(/^\/materials\/[0-9a-f-]{36}$/.test(route)&&method==='PATCH');
    if(!allowed)return result({error:'接口不存在'},404);
    if(route==='/materials'&&method==='POST'){
-    const file=options.body?.get?.('file');if(!file||file.size<=0||file.size>20*1024*1024)return result({error:'请选择20MB以内的非空文件'},400);
+    const file=options.body?.get?.('file');if(!file||file.size<=0||file.size>40*1024*1024)return result({error:'请选择40MB以内的非空文件'},400);
     if(!String(options.body.get('source')||'').trim())options.body.set('source','项目组');
    }
    const response=await nativeFetch(origin+'/functions/v1/gratitude-admin'+route,{...options,method,headers:{apikey:cfg.publishableKey,...(session?.token?{'X-Admin-Session':session.token}:{}),...(options.headers||{})}});
